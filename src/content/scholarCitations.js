@@ -1,5 +1,7 @@
-const DEFAULT_SCHOLAR_PROFILE =
+const GOOGLE_SCHOLAR_PROFILE =
   "https://scholar.google.com/citations?hl=en&user=Ih094PwAAAAJ&view_op=list_works&sortby=pubdate";
+const CACHE_KEY = "anleeno:google-scholar-citations:v1";
+const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
 
 function normalizeTitle(value = "") {
   return value
@@ -10,79 +12,94 @@ function normalizeTitle(value = "") {
     .replace(/\s+/g, " ");
 }
 
-function toMap(rows) {
-  return rows.reduce((acc, row) => {
-    if (!row || !row.title || !Number.isFinite(row.citations)) {
-      return acc;
+function rowsToMap(rows) {
+  return rows.reduce((result, row) => {
+    const key = normalizeTitle(row?.title);
+    if (key && Number.isFinite(row?.citations)) {
+      result[key] = Math.max(result[key] || 0, row.citations);
     }
-    const key = normalizeTitle(row.title);
-    if (!key) {
-      return acc;
-    }
-    acc[key] = Math.max(acc[key] || 0, row.citations);
-    return acc;
+    return result;
   }, {});
 }
 
-function parseScholarHtmlRows(html) {
-  if (typeof window === "undefined" || typeof DOMParser === "undefined") {
+function parseScholarHtml(html) {
+  if (typeof DOMParser === "undefined") {
     return [];
   }
-  const doc = new DOMParser().parseFromString(html, "text/html");
-  const rows = Array.from(doc.querySelectorAll("tr.gsc_a_tr"));
-  return rows
-    .map((row) => {
-      const title = row.querySelector(".gsc_a_at")?.textContent?.trim() || "";
-      const citationText = row.querySelector(".gsc_a_ac")?.textContent?.trim() || "";
-      const citations = Number.parseInt(citationText, 10);
-      return {
-        title,
-        citations: Number.isFinite(citations) ? citations : 0
-      };
-    })
-    .filter((row) => row.title);
+
+  const documentNode = new DOMParser().parseFromString(html, "text/html");
+  return Array.from(documentNode.querySelectorAll("tr.gsc_a_tr"))
+    .map((row) => ({
+      title: row.querySelector(".gsc_a_at")?.textContent?.trim() || "",
+      citations: Number.parseInt(
+        row.querySelector(".gsc_a_ac")?.textContent?.trim() || "0",
+        10
+      )
+    }))
+    .filter((row) => row.title && Number.isFinite(row.citations));
 }
 
-function parseScholarTextRows(text) {
-  if (!text) {
-    return [];
-  }
+function parseScholarMarkdown(text) {
   const rows = [];
   const lines = text
     .split("\n")
     .map((line) => line.trim())
     .filter(Boolean);
 
-  for (let index = 1; index < lines.length; index += 1) {
-    const match = lines[index].match(/cited by\s+(\d+)/i);
-    if (!match) {
-      continue;
+  lines.forEach((line, index) => {
+    const match = line.match(/cited by\s+(\d+)/i);
+    const title = lines[index - 1]?.replace(/^\d+\.\s*/, "");
+    if (match && title && !/^(cited by|year|title)$/i.test(title)) {
+      rows.push({ title, citations: Number.parseInt(match[1], 10) });
     }
-    const previous = lines[index - 1];
-    if (!previous || /^(cited by|year|title)$/i.test(previous)) {
-      continue;
-    }
-    rows.push({
-      title: previous.replace(/^\d+\.\s*/, ""),
-      citations: Number.parseInt(match[1], 10)
-    });
-  }
+  });
 
   return rows;
 }
 
-async function fetchText(url, timeoutMs = 9000) {
+function readCache(allowExpired = false) {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    const cached = JSON.parse(window.localStorage.getItem(CACHE_KEY));
+    const isFresh = Date.now() - cached.savedAt < CACHE_TTL_MS;
+    if (cached?.citations && (allowExpired || isFresh)) {
+      return cached.citations;
+    }
+  } catch (error) {
+    // Citation data is optional and must never affect the publication cards.
+  }
+
+  return null;
+}
+
+function writeCache(citations) {
+  if (typeof window === "undefined" || Object.keys(citations).length === 0) {
+    return;
+  }
+
+  try {
+    window.localStorage.setItem(
+      CACHE_KEY,
+      JSON.stringify({ citations, savedAt: Date.now() })
+    );
+  } catch (error) {
+    // Ignore storage restrictions.
+  }
+}
+
+async function fetchText(url, timeoutMs = 8000) {
   const controller = new AbortController();
   const timer = window.setTimeout(() => controller.abort(), timeoutMs);
+
   try {
     const response = await fetch(url, {
       signal: controller.signal,
       cache: "no-store"
     });
-    if (!response.ok) {
-      return "";
-    }
-    return response.text();
+    return response.ok ? response.text() : "";
   } catch (error) {
     return "";
   } finally {
@@ -90,50 +107,53 @@ async function fetchText(url, timeoutMs = 9000) {
   }
 }
 
-function buildProxyUrls(profileUrl) {
-  const withoutProtocol = profileUrl.replace(/^https?:\/\//i, "");
+function proxyUrls() {
+  const scholarPath = GOOGLE_SCHOLAR_PROFILE.replace(/^https?:\/\//i, "");
   return [
-    `https://r.jina.ai/http://${withoutProtocol}`,
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(profileUrl)}`
+    `https://r.jina.ai/http://${scholarPath}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(GOOGLE_SCHOLAR_PROFILE)}`
   ];
 }
 
-export async function fetchScholarCitations(profileUrl = DEFAULT_SCHOLAR_PROFILE) {
-  const candidates = buildProxyUrls(profileUrl);
-  for (const url of candidates) {
+export async function fetchScholarCitations() {
+  const freshCache = readCache();
+  if (freshCache) {
+    return freshCache;
+  }
+
+  for (const url of proxyUrls()) {
     const text = await fetchText(url);
     if (!text) {
       continue;
     }
-    const rows = text.includes("gsc_a_tr") ? parseScholarHtmlRows(text) : parseScholarTextRows(text);
-    if (rows.length > 0) {
-      return toMap(rows);
+
+    const rows = text.includes("gsc_a_tr")
+      ? parseScholarHtml(text)
+      : parseScholarMarkdown(text);
+    const citations = rowsToMap(rows);
+    if (Object.keys(citations).length > 0) {
+      writeCache(citations);
+      return citations;
     }
   }
-  return {};
+
+  return readCache(true) || {};
 }
 
 export function resolveCitationCount(title, citationMap = {}) {
-  if (!title) {
-    return null;
-  }
   const target = normalizeTitle(title);
   if (!target) {
     return null;
   }
+
   if (Number.isFinite(citationMap[target])) {
     return citationMap[target];
   }
 
-  const keys = Object.keys(citationMap);
-  for (const key of keys) {
-    if (key.length < 12) {
-      continue;
-    }
-    if (target.includes(key) || key.includes(target)) {
-      return citationMap[key];
-    }
-  }
-
-  return null;
+  const similarTitle = Object.keys(citationMap).find(
+    (candidate) =>
+      candidate.length >= 12 &&
+      (candidate.includes(target) || target.includes(candidate))
+  );
+  return similarTitle ? citationMap[similarTitle] : null;
 }

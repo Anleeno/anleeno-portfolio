@@ -28,11 +28,22 @@ const resolvedFeaturedWorks = galleryContent.featuredWorks.map((work) => ({
 }));
 
 function copyCitation(text) {
-  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+  if (navigator?.clipboard?.writeText) {
     return navigator.clipboard.writeText(text);
   }
 
-  return Promise.reject(new Error("Clipboard unavailable"));
+  return new Promise((resolve, reject) => {
+    const input = document.createElement("textarea");
+    input.value = text;
+    input.setAttribute("readonly", "");
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.select();
+    const copied = document.execCommand("copy");
+    document.body.removeChild(input);
+    copied ? resolve() : reject(new Error("Clipboard unavailable"));
+  });
 }
 
 function scrollToPortfolioSection(sectionId) {
