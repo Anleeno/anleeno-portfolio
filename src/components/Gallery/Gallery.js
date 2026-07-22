@@ -287,7 +287,7 @@ function Gallery() {
                 <div className="portfolio-cover-actions">
                   <a
                     className="portfolio-cover-link primary"
-                    href="https://github.com/anleeno"
+                    href="https://github.com/trending?since=weekly"
                     target="_blank"
                     rel="noreferrer"
                   >
