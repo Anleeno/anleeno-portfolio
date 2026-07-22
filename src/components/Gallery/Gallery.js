@@ -82,7 +82,7 @@ function Gallery() {
           }
           return tag && tag.type === "citation";
         });
-        if (Number.isFinite(citationCount) && !hasCitationTag) {
+        if (Number.isFinite(citationCount) && citationCount > 0 && !hasCitationTag) {
           authorTags.unshift({
             type: "citation",
             text: `Cited by ${citationCount}`
