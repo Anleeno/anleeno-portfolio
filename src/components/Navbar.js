@@ -14,6 +14,11 @@ import {
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const legacyPagesPath = "/anleeno-portfolio";
+  const isLegacyProjectPage = window.location.hostname.toLowerCase() === "anleeno.github.io"
+    && (window.location.pathname === legacyPagesPath
+      || window.location.pathname.startsWith(`${legacyPagesPath}/`));
+  const siteRoot = isLegacyProjectPage ? `${legacyPagesPath}/` : "/";
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -33,7 +38,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand as={Link} to="/" className="d-flex">
+        <Navbar.Brand href={siteRoot} className="d-flex">
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
