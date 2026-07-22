@@ -1,0 +1,60 @@
+/* Active visual locks kept separate so they always load after legacy variants. */
+html body #root .about-section .about-profile-visual,
+html body #root .about-section .about-profile-layout .about-image-shell,
+html body #root .about-section .about-profile-layout .about-main-image {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html body #root .about-section .about-profile-layout .about-image-shell::before {
+  content: none !important;
+  display: none !important;
+}
+
+html body #root .about-section .about-profile-layout .about-image-shell::after {
+  bottom: -0.72rem !important;
+}
+
+.about-tarot-album-cover {
+  position: relative !important;
+}
+
+.about-tarot-album-cover-image {
+  position: absolute !important;
+  inset: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.about-tarot-album-cover-image.is-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 1 !important;
+}
+
+.about-tarot-album-cover-image img {
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+.about-tarot-album-controls,
+.about-tarot-album-dots {
+  z-index: 4 !important;
+}
+
+@media (max-width: 767px) {
+  html body #root .about-section .about-profile-layout .about-image-shell::after {
+    bottom: -0.5rem !important;
+  }
+}

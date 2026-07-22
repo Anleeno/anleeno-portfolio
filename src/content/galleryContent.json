@@ -1,0 +1,79 @@
+{
+  "featuredWorks": [
+    {
+      "type": "app",
+      "badge": "XR",
+      "title": "AI-Native Mixed-Reality Socializing",
+      "description": "An AI-native mixed-reality social platform that blends spatial perception, generative interaction, and shared XR experiences. The project explores how intelligent agents can make remote socializing feel more embodied, expressive, and naturally connected.",
+      "imageKey": "ex",
+      "action": "app"
+    },
+    {
+      "type": "project",
+      "badge": "Intelligent Transportation",
+      "title": "ADAS for Micro-Mobility",
+      "description": "A vision-based advanced driver-assistance system designed for e-bicycles and other micro-mobility vehicles. It combines real-time road perception, hazard awareness, and lightweight on-device inference to improve safety in complex urban traffic.",
+      "imageKey": "adas",
+      "action": "github"
+    },
+    {
+      "type": "system",
+      "badge": "Object Recommendation",
+      "title": "DORIS: End-to-End Detection with Object Ranking for Retrieval Instance Selection",
+      "description": "We propose a novel model for visual search and shopping scenarios, such as Taobao image search and Xiaohongshu camera search, that jointly performs object detection and ranking to identify and recommend the subjects most relevant to user intent.",
+      "imageKey": "doris",
+      "action": "demo",
+      "link": "https://huggingface.co/spaces/geminia/Doris"
+    }
+  ],
+  "paperCards": [
+    {
+      "year": "2026",
+      "imageKey": "dpc_vqa_2026",
+      "title": "DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment",
+      "venue": "ACMMM",
+      "ccfLevel": "A",
+      "authors": "X. Li, S. Xu, Z. Zhang, Z. Cai, Y. Chen, and G. Zhai.",
+      "highlightAuthors": ["S. Xu"],
+      "authorTags": [{ "type": "cofirst", "text": "Co-1st" }],
+      "keywords": ["Video Quality Assessment", "Few-shot", "User-generated Content", "AI-generated Content"],
+      "note": "Recent multimodal large language models (MLLMs) have shown promising performance on video quality assessment (VQA) tasks. However, adapting them to new scenarios remains expensive due to large-scale retraining and costly mean opinion score (MOS) annotations. In this paper, we argue that a pretrained MLLM already provides a useful perceptual prior for VQA, and that the main challenge is to efficiently calibrate this prior to the target MOS space. Based on this insight, we propose DPC-VQA, a decoupling perception and calibration framework for video quality assessment. Specifically, DPC-VQA uses a frozen MLLM to provide a base quality estimate and perceptual prior, and employs a lightweight calibration branch to predict a residual correction for target-scenario adaptation. This design avoids costly end-to-end retraining while maintaining reliable performance with lower training and data costs. Extensive experiments on both user-generated content (UGC) and AI-generated content (AIGC) benchmarks show that DPC-VQA achieves competitive performance against representative baselines, while using less than 2% of the trainable parameters of conventional MLLM-based VQA methods and remaining effective with only 20% of MOS labels. The code will be released upon publication.",
+      "cite": "X. Li, S. Xu, Z. Zhang, Z. Cai, Y. Chen, and G. Zhai, “DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment,” arXiv preprint arXiv:2604.12813, 2026.",
+      "links": [
+        { "label": "Paper", "href": "https://arxiv.org/pdf/2604.12813" },
+        { "label": "Code", "href": "https://github.com/anleeno" }
+      ]
+    },
+    {
+      "year": "2026",
+      "imageKey": "leaf_2026",
+      "title": "Decoupling Perception and Calibration: Label-Efficient Image Quality Assessment Framework",
+      "venue": "NeurIPS",
+      "ccfLevel": "A",
+      "authors": "X. Li, Z. Zhang, Z. Xu, S. Xu, X. Min, Y. Chen, and G. Zhai.",
+      "highlightAuthors": ["S. Xu"],
+      "keywords": ["Image Quality Assessment", "Knowledge Distillation", "MLLM Teacher", "Label-Efficient Learning"],
+      "note": "Recent multimodal large language models (MLLMs) have demonstrated strong capabilities in image quality assessment (IQA) tasks. However, adapting such large-scale models is computationally expensive and still relies on substantial Mean Opinion Score (MOS) annotations. We argue that for MLLM-based IQA, the core bottleneck lies not in the quality perception capacity of MLLMs, but in MOS scale calibration. Therefore, we propose LEAF, a Label-Efficient Image Quality Assessment Framework that distills perceptual quality priors from an MLLM teacher into a lightweight student regressor, enabling MOS calibration with minimal human supervision. Specifically, the teacher conducts dense supervision through point-wise judgments and pair-wise preferences, with an estimate of decision reliability. Guided by these signals, the student learns the teacher's quality perception patterns through joint distillation and is calibrated on a small MOS subset to align with human annotations. Experiments on both user-generated and AI-generated IQA benchmarks demonstrate that our method significantly reduces the need for human annotations while maintaining strong MOS-aligned correlations, making lightweight IQA practical under limited annotation budgets.",
+      "cite": "X. Li, Z. Zhang, Z. Xu, S. Xu, X. Min, Y. Chen, and G. Zhai, “Decoupling perception and calibration: Label-efficient image quality assessment framework,” arXiv preprint arXiv:2601.20689, 2026.",
+      "links": [
+        { "label": "Paper", "href": "https://arxiv.org/pdf/2601.20689" },
+        { "label": "Code", "href": "https://github.com/anleeno" }
+      ]
+    },
+    {
+      "year": "2025",
+      "imageKey": "vqc_cha_2025",
+      "title": "VQualA 2025 Challenge on Visual Quality Comparison for Large Multimodal Models: Methods and Results",
+      "venue": "ICCV",
+      "ccfLevel": "A",
+      "authors": "H. Zhu et al.",
+      "authorTags": [{ "type": "rank", "text": "Challenge Top 2" }],
+      "keywords": ["Visual Quality Comparison", "LMM Evaluation", "Benchmark", "Challenge"],
+      "note": "This paper presents a summary of the VQualA 2025 Challenge on Visual Quality Comparison for Large Multimodal Models (LMMs), hosted as part of the ICCV 2025 Workshop on Visual Quality Assessment. The challenge aims to evaluate and enhance the ability of state-of-the-art LMMs to perform open-ended and detailed reasoning about visual quality differences across multiple images. To this end, the competition introduces a novel benchmark comprising thousands of coarse-to-fine grained visual quality comparison tasks, spanning single images, pairs, and multi-image groups. Each task requires models to provide accurate quality judgments. The competition emphasizes holistic evaluation protocols, including 2AFC-based binary preference and multi-choice questions (MCQs). Around 100 participants submitted entries, with five models demonstrating the emerging capabilities of instruction-tuned LMMs on quality assessment. This challenge marks a significant step toward open-domain visual quality reasoning and comparison and serves as a catalyst for future research on interpretable and human-aligned quality evaluation systems.",
+      "cite": "H. Zhu et al., “VQualA 2025 challenge on visual quality comparison for large multimodal models: Methods and results,” in Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV) Workshops, Oct. 2025, pp. 3383–3393.",
+      "links": [
+        { "label": "Paper", "href": "https://openaccess.thecvf.com/content/ICCV2025W/VQualA/papers/Zhu_VQualA_2025_Challenge_on_Visual_Quality_Comparison_for_Large_Multimodal_ICCVW_2025_paper.pdf" }
+      ]
+    }
+  ]
+}

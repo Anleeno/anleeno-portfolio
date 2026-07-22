@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "title": "I",
+    "artist": "Taeyeon(태연)",
+    "album": "I",
+    "coverFile": "28_Taeyeon-I.png",
+    "audioFile": "28_Taeyeon-I.mp3"
+  },
+  {
+    "id": 2,
+    "title": "UR",
+    "artist": "Taeyeon(태연)",
+    "album": "I",
+    "coverFile": "30_Taeyeon-UR.png",
+    "audioFile": "30_Taeyeon-UR.mp3"
+  },
+  {
+    "id": 3,
+    "title": "Disaster",
+    "artist": "Taeyeon(태연)",
+    "album": "Letter To Myself",
+    "coverFile": "01_Taeyeon_Disaster.png",
+    "audioFile": "01_Taeyeon_Disaster.mp3"
+  },
+  {
+    "id": 4,
+    "title": "Can't Control Myself",
+    "artist": "Taeyeon(태연)",
+    "album": "Can't Control Myself",
+    "coverFile": "02_Taeyeon_CCM.png",
+    "audioFile": "02_Taeyeon_CCM.mp3"
+  },
+  {
+    "id": 5,
+    "title": "Fireworks",
+    "artist": "NOA",
+    "album": "Fireworks",
+    "coverFile": "03_NOA_Fireworks.png",
+    "audioFile": "03_NOA_Fireworks.mp3"
+  },
+  {
+    "id": 6,
+    "title": "illa illa",
+    "artist": "JUNIEL",
+    "album": "illa illa",
+    "coverFile": "27_illa_illa_JUNIEL.jpg",
+    "audioFile": "27_illa_illa_JUNIEL.mp3"
+  },
+  {
+    "id": 7,
+    "title": "Talk Talk",
+    "artist": "Girls' Generation(소녀시대)",
+    "album": "Talk Talk",
+    "coverFile": "03_TalkTalk_GirlsGeneration.jpg",
+    "audioFile": "03_TalkTalk_GirlsGeneration.mp3"
+  },
+  {
+    "id": 8,
+    "title": "Only U",
+    "artist": "Girls' Generation(소녀시대)-TaeTiSeo",
+    "album": "Only U",
+    "coverFile": "04_OnlyU_GirlsGeneration-TTS.jpg",
+    "audioFile": "04_OnlyU_GirlsGeneration-TTS.mp3"
+  },
+  {
+    "id": 9,
+    "title": "11:11",
+    "artist": "Taeyeon(태연)",
+    "album": "11:11",
+    "coverFile": "04_Taeyeon_11_11.png",
+    "audioFile": "04_Taeyeon_11_11.mp3"
+  },
+  {
+    "id": 10,
+    "title": "Why",
+    "artist": "Taeyeon(태연)",
+    "album": "Why",
+    "coverFile": "04_Taeyeon_Why.png",
+    "audioFile": "04_Taeyeon_Why.mp3"
+  },
+  {
+    "id": 11,
+    "title": "Dear Me",
+    "artist": "Taeyeon(태연)",
+    "album": "Dear Me",
+    "coverFile": "05_Taeyeon_Dear_Me.png",
+    "audioFile": "05_Taeyeon_Dear_Me.mp3"
+  },
+  {
+    "id": 12,
+    "title": "Drawing Our Moments",
+    "artist": "Taeyeon(태연)",
+    "album": "Purpose",
+    "coverFile": "06_Taeyeon_Drawing_Our_Moments.png",
+    "audioFile": "06_Taeyeon_Drawing_Our_Moments.mp3"
+  },
+  {
+    "id": 13,
+    "title": "Baby Steps",
+    "artist": "Girls' Generation(소녀시대)-TaeTiSeo",
+    "album": "Holler",
+    "coverFile": "08_BabySteps_GirlsGeneration-TTS.jpg",
+    "audioFile": "08_BabySteps_GirlsGeneration-TTS.mp3"
+  },
+  {
+    "id": 14,
+    "title": "Promise",
+    "artist": "Girls' Generation(소녀시대)",
+    "album": "Lion Heart",
+    "coverFile": "10_Promise_GirlsGeneration.jpg",
+    "audioFile": "10_Promise_GirlsGeneration.mp3"
+  },
+  {
+    "id": 15,
+    "title": "MASAYUME CHASING",
+    "artist": "BoA",
+    "album": "MASAYUME CHASING",
+    "coverFile": "11_FairyTail-KyleXian.png",
+    "audioFile": "11_BoA-MASAYUME_CHASING.mp3"
+  },
+  {
+    "id": 16,
+    "title": "Growing Pains",
+    "artist": "Super Junior(D&E)",
+    "album": "The Beat Goes On",
+    "coverFile": "12_GrowingPains_SJ_DE.jpg",
+    "audioFile": "12_GrowingPains_SJ_DE.mp3"
+  },
+  {
+    "id": 17,
+    "title": "PARTY",
+    "artist": "Girls' Generation(소녀시대)",
+    "album": "PARTY",
+    "coverFile": "13_PARTY_GirlsGeneration.jpg",
+    "audioFile": "13_PARTY_GirlsGeneration.mp3"
+  },
+  {
+    "id": 18,
+    "title": "Bad Boy",
+    "artist": "Red Velvet",
+    "album": "The Perfect Red Velvet",
+    "coverFile": "14_RedVelvet-BadBoy.jpg",
+    "audioFile": "14_RedVelvet-BadBoy.mp3"
+  },
+  {
+    "id": 19,
+    "title": "Psycho",
+    "artist": "Red Velvet",
+    "album": "The ReVe Festival Finale",
+    "coverFile": "15_RedVelvet-Psycho.jpg",
+    "audioFile": "15_RedVelvet-Psycho.mp3"
+  },
+  {
+    "id": 20,
+    "title": "Really",
+    "artist": "BLACKPINK",
+    "album": "Square Up",
+    "coverFile": "16_BLACKPINK-Really.jpg",
+    "audioFile": "16_BLACKPINK-Really.mp3"
+  },
+  {
+    "id": 21,
+    "title": "WHISTLE",
+    "artist": "BLACKPINK",
+    "album": "Square One",
+    "coverFile": "18_BLACKPINK-WHISTLE.jpg",
+    "audioFile": "18_BLACKPINK-WHISTLE.mp3"
+  },
+  {
+    "id": 22,
+    "title": "POP/STARS",
+    "artist": "K/DA",
+    "album": "POP/STARS",
+    "coverFile": "21_POP_STARS.jpg",
+    "audioFile": "21_POP_STARS.mp3"
+  },
+  {
+    "id": 23,
+    "title": "4 Walls",
+    "artist": "f(x)",
+    "album": "4 Walls",
+    "coverFile": "25_4-Walls_fx.jpg",
+    "audioFile": "25_4Walls_fx.mp3"
+  },
+  {
+    "id": 24,
+    "title": "Time Lapse",
+    "artist": "Taeyeon(태연)",
+    "album": "My Voice",
+    "coverFile": "29_Taeyeon-TimeLapse.png",
+    "audioFile": "29_Taeyeon-TimeLapse.mp3"
+  }
+]

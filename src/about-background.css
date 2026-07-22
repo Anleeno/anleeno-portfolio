@@ -1,0 +1,2199 @@
+/* About palette follows the lucyling About page. */
+.about-section {
+  --about-orange: #ff7f3a;
+  --about-amber: #ff7f3a;
+  --about-ink: #303b4d;
+  --about-glass-bg: rgba(255, 255, 255, 0.58);
+  --about-glass-border: rgba(255, 255, 255, 0.82);
+  --about-glass-shadow: 0 8px 22px rgba(61, 76, 96, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background-color: #ffe8d8 !important;
+  background-image: linear-gradient(180deg, #ffe8d8 0%, #fff0e6 80%, #ffffff 100%) !important;
+  background-size: auto !important;
+  background-position: center !important;
+  min-height: 100vh !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  padding-top: 6.75rem !important;
+  padding-bottom: 3.25rem !important;
+}
+
+.about-section > .container {
+  width: 100%;
+}
+
+/* Remove historic decorative layers and lines. */
+.about-section::before,
+.about-section::after,
+.about-section .about-profile-layout::before,
+.about-section .about-profile-layout::after,
+.about-section .about-profile-visual::before,
+.about-section .about-profile-visual::after,
+.about-section .about-bio-quote::before,
+.about-section .about-bio-quote::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.about-section .about-profile-layout,
+.about-section .about-profile-copy,
+.about-section .about-bio-panel,
+.about-section .about-bio-lines,
+.about-section .about-bio-experience,
+.about-section .about-bio-list,
+.about-section .about-bio-quote,
+.about-section .about-bio-lines li,
+.about-section .about-bio-experience > p,
+.about-section .about-bio-experience li,
+.about-section .about-bio-experience li span,
+.about-section .about-bio-quote p {
+  color: #59616c !important;
+}
+
+.about-section .about-profile-layout .about-hero-title,
+.about-section .about-bio-name,
+.about-section .about-bio-lines strong,
+.about-section .about-bio-experience strong {
+  color: var(--about-ink) !important;
+}
+
+.about-section .about-profile-layout .about-hero-title strong,
+.about-section .about-bio-name span,
+.about-section .about-bio-quote cite,
+.about-section .about-bio-experience li::marker {
+  color: var(--about-orange) !important;
+}
+
+.about-section .about-bio-quote {
+  border: 0 !important;
+  background: transparent !important;
+}
+
+/* Keep Interests and Experiences on the exact same text grid. */
+.about-section .about-bio-lines li,
+.about-section .about-bio-experience > p {
+  display: grid !important;
+  grid-template-columns: 1.45rem minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 0.44rem !important;
+  padding-left: 0 !important;
+  font-size: 1rem !important;
+  line-height: 1.45rem !important;
+}
+
+.about-section .about-bio-lines li > span:last-child,
+.about-section .about-bio-experience > p > span:last-child {
+  line-height: 1.45rem !important;
+}
+
+.about-section .about-bio-line-icon,
+.about-section .about-bio-experience > p .about-bio-line-icon {
+  display: inline-grid !important;
+  place-items: center !important;
+  width: 1.45rem !important;
+  height: 1.45rem !important;
+  border-radius: 0.48rem !important;
+  box-shadow: none !important;
+}
+
+.about-section .about-bio-line-icon svg {
+  width: 0.94rem;
+  height: 0.94rem;
+  stroke-width: 1.8;
+}
+
+.about-section .about-bio-line-icon--interest {
+  border: 1px solid #c9dfea !important;
+  background: #dcecf5 !important;
+  color: #466478 !important;
+}
+
+.about-section .about-bio-line-icon--experience,
+.about-section .about-bio-experience > p .about-bio-line-icon--experience {
+  border: 1px solid #ddd4ed !important;
+  background: #e8e1f3 !important;
+  color: #625778 !important;
+}
+
+.about-section .about-bio-tags span,
+.about-section .about-bio-tags span:nth-child(n) {
+  color: #555d68 !important;
+  box-shadow: 0 4px 12px rgba(68, 64, 78, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.56) !important;
+}
+
+.about-section .about-bio-tags span:nth-child(1) {
+  background: #dcecf5 !important;
+  border-color: #c9dfea !important;
+  color: #466478 !important;
+}
+
+.about-section .about-bio-tags span:nth-child(2) {
+  background: #e8e1f3 !important;
+  border-color: #ddd4ed !important;
+  color: #625778 !important;
+}
+
+.about-section .about-bio-tags span:nth-child(3) {
+  background: #f8ddcc !important;
+  border-color: #f1cfbc !important;
+  color: #9a5937 !important;
+}
+
+.about-section .about-bio-tags span:nth-child(4) {
+  background: #dcebdc !important;
+  border-color: #cde0ce !important;
+  color: #4e6b54 !important;
+}
+
+/* Resume trigger sits below the complete two-column profile. */
+.about-section .about-resume-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.62rem;
+  width: 100%;
+  margin-top: 1.35rem;
+}
+
+.about-section .about-contact-mail {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.36rem;
+  height: 2.36rem;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  background: #ffffff !important;
+  color: #526174 !important;
+  box-shadow: 0 8px 24px rgba(45, 62, 82, 0.13), inset 0 1px 0 #ffffff !important;
+  text-decoration: none !important;
+  transition: transform 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.about-section .about-contact-mail svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 1.9;
+}
+
+.about-section .about-contact-mail:hover,
+.about-section .about-contact-mail:focus-visible {
+  transform: translateY(-2px);
+  color: #394b61 !important;
+  box-shadow: 0 12px 30px rgba(45, 62, 82, 0.17), inset 0 1px 0 #ffffff !important;
+}
+
+.about-section .about-contact-mail:active {
+  transform: translateY(1px);
+  box-shadow: none !important;
+}
+
+.about-section .about-resume-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-height: 2.36rem;
+  padding: 0.34rem 0.52rem 0.34rem 0.42rem;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: #ffffff !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  color: #526174 !important;
+  box-shadow: 0 8px 24px rgba(45, 62, 82, 0.13), inset 0 1px 0 #ffffff !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none !important;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.about-section .about-resume-button[aria-expanded="false"]:hover,
+.about-section .about-resume-button:focus-visible {
+  transform: translateY(-2px);
+  background: #ffffff !important;
+  color: #394b61 !important;
+  box-shadow: 0 12px 30px rgba(45, 62, 82, 0.17), inset 0 1px 0 #fff !important;
+}
+
+.about-section .about-resume-button[aria-expanded="true"] {
+  background: #ffffff !important;
+  color: #394b61 !important;
+  transform: translateY(1px);
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.about-section .about-resume-button[aria-expanded="true"]:hover {
+  transform: translateY(1px);
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.about-section .about-resume-button[aria-expanded="false"]:active {
+  transform: translateY(1px);
+  box-shadow: none !important;
+}
+
+.about-section .about-resume-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.68rem;
+  height: 1.68rem;
+  border-radius: 50%;
+  background: #e4e5fa;
+  color: #65628e;
+  font-size: 0.52rem;
+  letter-spacing: 0.02em;
+}
+
+.about-section .about-resume-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 1.42rem;
+  height: 1.42rem;
+  border-radius: 50%;
+  background: #dcecf5;
+  color: #557286;
+  font-size: 0.78rem;
+}
+
+.about-section .about-resume-arrow svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  stroke-width: 2.2;
+}
+
+/* Inline PDF viewer; opening it extends the About page naturally. */
+.about-resume-preview {
+  position: relative;
+  width: min(100%, 940px);
+  margin: 1.35rem auto 0;
+  animation: resume-inline-in 220ms ease-out both;
+}
+
+.about-resume-download {
+  position: absolute;
+  top: 1rem;
+  right: max(1rem, calc((100% - 900px) / 2 + 1rem));
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  min-height: 2.45rem;
+  margin: 0;
+  padding: 0.34rem 0.72rem 0.34rem 0.36rem;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: #ffffff !important;
+  background-image: none !important;
+  opacity: 1 !important;
+  color: #455367 !important;
+  box-shadow: 0 8px 24px rgba(45, 62, 82, 0.13), inset 0 1px 0 #fff;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  text-decoration: none !important;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.about-resume-download:hover {
+  transform: translateY(-2px);
+  background: #ffffff !important;
+  color: #303d50 !important;
+  box-shadow: 0 12px 30px rgba(45, 62, 82, 0.17), inset 0 1px 0 #fff;
+}
+
+.about-resume-download-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.72rem;
+  height: 1.72rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #dcecf5, #e5e2fa);
+  color: #63758f;
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+.about-resume-download-icon svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 1.8;
+}
+
+.about-resume-pages {
+  display: grid;
+  justify-items: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.about-resume-pages .react-pdf__Page {
+  overflow: hidden;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(45, 61, 80, 0.12);
+}
+
+.about-resume-pages canvas {
+  display: block;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.about-resume-loading {
+  margin: 2rem 0;
+  color: #697688;
+  font-size: 0.8rem;
+}
+
+@keyframes resume-inline-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* One-layer frosted portrait card. */
+.about-section .about-profile-layout .about-image-shell {
+  background-color: var(--about-glass-bg) !important;
+  background-image: none !important;
+  border: 1px solid var(--about-glass-border) !important;
+  box-shadow: var(--about-glass-shadow) !important;
+  backdrop-filter: blur(16px) saturate(1.08) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(1.08) !important;
+}
+
+.about-section .about-profile-layout .about-image-shell::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Preserve the original small accent bar. */
+.about-section .about-profile-layout .about-image-shell::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  right: 1.1rem !important;
+  bottom: 0.52rem !important;
+  left: auto !important;
+  top: auto !important;
+  width: 3.2rem !important;
+  height: 0.24rem !important;
+  z-index: 3 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #7fb8d8 0%, #b89bd6 50%, #ff7f3a 100%) !important;
+  box-shadow: 0 3px 10px rgba(113, 126, 171, 0.18) !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+
+/* White-first tarot surface using the artwork's starlight blue and mist violet. */
+:is(.about-section, .tox-section) .about-tarot-card {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  background-image:
+    radial-gradient(76% 94% at 92% 12%, rgba(139, 180, 224, 0.26), transparent 76%),
+    radial-gradient(74% 92% at 8% 92%, rgba(176, 151, 207, 0.22), transparent 78%),
+    linear-gradient(138deg, rgba(255, 255, 255, 0.96), rgba(237, 241, 250, 0.88)) !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 30px 72px rgba(65, 61, 59, 0.1) !important;
+  backdrop-filter: blur(24px) saturate(1.04) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.04) !important;
+}
+
+:is(.about-section, .tox-section) .about-tarot-card::before,
+:is(.about-section, .tox-section) .about-tarot-card::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+}
+
+/* The card artwork supplies the stars; keep the container free of fake dots. */
+:is(.about-section, .tox-section) .about-tarot-bg {
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+:is(.about-section, .tox-section) .about-tarot-bg::before,
+:is(.about-section, .tox-section) .about-tarot-bg::after {
+  display: none !important;
+  content: none !important;
+}
+
+:is(.about-section, .tox-section) .about-tarot-kicker {
+  border: 0 !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  color: #a6a7ab !important;
+  box-shadow: 0 2px 10px rgba(93, 76, 55, 0.07) !important;
+}
+
+:is(.about-section, .tox-section) .about-tarot-heading h2 {
+  color: var(--about-ink) !important;
+}
+
+:is(.about-section, .tox-section) .about-tarot-heading p {
+  color: #626a74 !important;
+}
+
+@media (max-width: 767px) {
+  .about-section {
+    background-image: linear-gradient(180deg, #ffe8d8 0%, #fff0e6 80%, #ffffff 100%) !important;
+    display: block !important;
+    min-height: 100vh !important;
+    padding-top: 6.5rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .about-section .about-bio-lines li,
+  .about-section .about-bio-experience > p {
+    font-size: 0.92rem !important;
+    line-height: 1.45rem !important;
+  }
+
+  .about-section .about-profile-layout {
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .about-section .about-profile-layout > .about-profile-copy,
+  .about-section .about-profile-layout > .about-profile-visual,
+  .about-section .about-profile-layout .about-image-shell {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .about-section .about-resume-action {
+    justify-content: center;
+    margin-top: 0.35rem;
+  }
+
+  .about-resume-preview {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .about-resume-download {
+    top: 0.65rem;
+    right: 0.65rem;
+    min-height: 2.2rem;
+    padding: 0.28rem 0.58rem 0.28rem 0.3rem;
+    font-size: 0.66rem;
+  }
+
+  .about-resume-download-icon {
+    width: 1.55rem;
+    height: 1.55rem;
+    font-size: 0.72rem;
+  }
+}
+
+/* To.X v3 — real-time Three.js celestial field. */
+.tox-section.tox-3d-page {
+  padding: 0;
+  overflow: visible;
+  background:
+    radial-gradient(60rem 42rem at 76% 18%, rgba(190, 209, 230, 0.58), transparent 72%),
+    radial-gradient(48rem 38rem at 16% 70%, rgba(220, 211, 235, 0.42), transparent 74%),
+    linear-gradient(180deg, #f3f6f8 0%, #e9eff3 52%, #f8f8f5 100%);
+}
+
+.tox-3d-hero {
+  position: relative;
+  min-height: max(46rem, 100vh);
+  overflow: hidden;
+}
+
+.tox-3d-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(244, 247, 249, 0.92) 0%, rgba(244, 247, 249, 0.5) 31%, transparent 56%),
+    linear-gradient(180deg, transparent 62%, rgba(238, 243, 246, 0.88) 100%);
+}
+
+.tox-3d-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  touch-action: none;
+  cursor: grab;
+}
+
+.tox-3d-canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tox-3d-overlay {
+  position: relative;
+  z-index: 2;
+  height: max(46rem, 100vh);
+  pointer-events: none;
+}
+
+.tox-3d-title {
+  position: absolute;
+  top: clamp(8.5rem, 17vh, 12rem);
+  left: 0.75rem;
+  width: min(35rem, 46vw);
+  text-align: left;
+}
+
+.tox-3d-title > span {
+  display: block;
+  margin-bottom: 1.1rem;
+  color: #75869e;
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.18em;
+}
+
+.tox-3d-title h1 {
+  margin: 0;
+  color: #253348;
+  font-size: clamp(4.3rem, 8.2vw, 7.8rem);
+  font-weight: 650;
+  letter-spacing: -0.075em;
+  line-height: 0.83;
+}
+
+.tox-3d-title p {
+  max-width: 25rem;
+  margin: 1.5rem 0 0;
+  color: #69788b;
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.tox-3d-controls {
+  position: absolute;
+  top: 8.8rem;
+  right: 0.8rem;
+  color: #6d7d93;
+  text-align: right;
+}
+
+.tox-3d-controls span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.tox-3d-controls span i {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: #789ac6;
+  box-shadow: 0 0 0 0.3rem rgba(120, 154, 198, 0.12);
+  animation: tox-live-pulse 1.8s ease-in-out infinite;
+}
+
+.tox-3d-controls p {
+  margin: 0.5rem 0 0;
+  color: #909aaa;
+  font-size: 0.46rem;
+  letter-spacing: 0.1em;
+}
+
+.tox-3d-readout {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 2.6rem;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  width: min(46rem, calc(100% - 1.5rem));
+  min-height: 7rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 1.35rem;
+  background: rgba(250, 252, 253, 0.7);
+  box-shadow: 0 24px 70px rgba(53, 71, 95, 0.12), inset 0 1px 0 #fff;
+  backdrop-filter: blur(22px) saturate(1.05);
+  -webkit-backdrop-filter: blur(22px) saturate(1.05);
+  pointer-events: auto;
+}
+
+.tox-3d-readout-index {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(220, 234, 245, 0.88), rgba(231, 224, 244, 0.82));
+}
+
+.tox-3d-readout-index span {
+  color: #4f617b;
+  font-size: 1rem;
+  font-weight: 760;
+}
+
+.tox-3d-readout-index small {
+  color: #8793a4;
+  font-size: 0.42rem;
+  letter-spacing: 0.1em;
+}
+
+.tox-3d-readout-signal {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.tox-3d-readout-signal > i {
+  color: #7e73a8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.25rem;
+  font-style: normal;
+}
+
+.tox-3d-readout-signal span {
+  color: #8a96a7;
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.tox-3d-readout-signal h2 {
+  margin: 0.05rem 0 0.18rem;
+  color: #34455d;
+  font-size: 1.15rem;
+  font-weight: 750;
+}
+
+.tox-3d-readout-signal p {
+  margin: 0;
+  overflow: hidden;
+  color: #697789;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tox-3d-readout > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.56rem 0.76rem;
+  border: 1px solid rgba(96, 118, 148, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #5c6d84;
+  font-size: 0.6rem;
+  font-weight: 750;
+  transition: transform 160ms ease, background-color 160ms ease;
+}
+
+.tox-3d-readout > button:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.tox-3d-readout > button:hover svg {
+  transform: rotate(120deg);
+}
+
+.tox-3d-readout > button svg {
+  transition: transform 280ms ease;
+}
+
+.tox-3d-oracle {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  padding-top: 6.5rem;
+  padding-bottom: 5rem;
+}
+
+.tox-3d-oracle-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 0 auto 1.5rem;
+  width: min(100%, 52rem);
+  color: #718198;
+}
+
+.tox-3d-oracle-heading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.56rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.tox-3d-oracle-heading p {
+  margin: 0;
+  color: #758397;
+  font-size: 0.7rem;
+}
+
+.tox-3d-oracle .about-tarot-card {
+  margin-top: 0;
+}
+
+@keyframes tox-live-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@media (max-width: 767px) {
+  .tox-3d-hero,
+  .tox-3d-overlay {
+    min-height: 54rem;
+    height: 54rem;
+  }
+
+  .tox-3d-hero::before {
+    background:
+      linear-gradient(180deg, rgba(244, 247, 249, 0.94) 0%, rgba(244, 247, 249, 0.34) 38%, transparent 62%),
+      linear-gradient(180deg, transparent 70%, rgba(238, 243, 246, 0.9) 100%);
+  }
+
+  .tox-3d-title {
+    top: 7.2rem;
+    left: 0.9rem;
+    width: calc(100% - 1.8rem);
+  }
+
+  .tox-3d-title h1 {
+    font-size: clamp(3.5rem, 18vw, 5rem);
+  }
+
+  .tox-3d-title p {
+    max-width: 17rem;
+  }
+
+  .tox-3d-controls {
+    top: 24rem;
+    right: 1rem;
+  }
+
+  .tox-3d-controls p {
+    display: none;
+  }
+
+  .tox-3d-readout {
+    right: 0.7rem;
+    bottom: 1.2rem;
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+    gap: 0.75rem;
+    width: calc(100% - 1.4rem);
+    min-height: 8.4rem;
+    padding: 0.72rem;
+  }
+
+  .tox-3d-readout-index {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .tox-3d-readout-signal {
+    grid-template-columns: 2rem minmax(0, 1fr);
+  }
+
+  .tox-3d-readout-signal > i {
+    font-size: 1.7rem;
+  }
+
+  .tox-3d-readout-signal p {
+    white-space: normal;
+  }
+
+  .tox-3d-readout > button {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+
+  .tox-3d-oracle {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+
+  .tox-3d-oracle-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0 0.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tox-3d-controls span i {
+    animation: none;
+  }
+}
+
+/* To.X v4 — generative unknown-life laboratory. */
+.tox-section.tox-experiment-page {
+  min-height: 100vh;
+  padding: 9.5rem 0 5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(52rem 38rem at 8% 4%, rgba(209, 226, 239, 0.58), transparent 72%),
+    radial-gradient(48rem 34rem at 94% 18%, rgba(226, 215, 238, 0.54), transparent 74%),
+    radial-gradient(48rem 34rem at 42% 88%, rgba(246, 232, 204, 0.32), transparent 76%),
+    linear-gradient(180deg, #f6f8f8 0%, #edf2f4 48%, #f8f7f3 100%);
+}
+
+.tox-experiment-intro {
+  max-width: 1100px;
+  margin-bottom: 4.5rem;
+  text-align: left;
+}
+
+.tox-experiment-intro > span,
+.tox-symbolic-phase > header > span {
+  display: block;
+  margin-bottom: 1rem;
+  color: #7d8ca0;
+  font-size: 0.6rem;
+  font-weight: 760;
+  letter-spacing: 0.18em;
+}
+
+.tox-experiment-intro h1 {
+  max-width: 58rem;
+  margin: 0;
+  color: #2b3748;
+  font-size: clamp(3.8rem, 8vw, 7rem);
+  font-weight: 640;
+  letter-spacing: -0.07em;
+  line-height: 0.88;
+}
+
+.tox-experiment-intro > p {
+  max-width: 36rem;
+  margin: 1.4rem 0 0;
+  color: #6e7b8c;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.tox-culture-lab {
+  display: grid;
+  grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr);
+  min-height: 46rem;
+  max-width: 1160px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 2rem;
+  background: rgba(248, 250, 250, 0.5);
+  box-shadow: 0 34px 90px rgba(49, 66, 86, 0.13), inset 0 1px 0 #fff;
+  backdrop-filter: blur(20px) saturate(1.04);
+  -webkit-backdrop-filter: blur(20px) saturate(1.04);
+}
+
+.tox-culture-console {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+  border-right: 1px solid rgba(88, 107, 132, 0.08);
+  background: rgba(250, 251, 251, 0.72);
+  color: #43536a;
+  text-align: left;
+}
+
+.tox-console-step {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.tox-console-step span {
+  display: grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: #e4ebf3;
+  color: #65778e;
+  font-size: 0.56rem;
+  font-weight: 800;
+}
+
+.tox-console-step p {
+  margin: 0;
+  color: #8491a2;
+  font-size: 0.52rem;
+  font-weight: 760;
+  letter-spacing: 0.14em;
+}
+
+.tox-culture-console > label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: #4f6076;
+  font-size: 0.72rem;
+  font-weight: 720;
+}
+
+.tox-culture-console textarea {
+  width: 100%;
+  min-height: 6.8rem;
+  resize: vertical;
+  padding: 0.8rem;
+  border: 1px solid rgba(91, 111, 139, 0.1);
+  border-radius: 1rem;
+  outline: 0;
+  background: rgba(255, 255, 255, 0.7);
+  color: #536278;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.tox-culture-console textarea:focus {
+  border-color: rgba(117, 143, 180, 0.34);
+  box-shadow: 0 0 0 4px rgba(117, 143, 180, 0.08);
+}
+
+.tox-cultivate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin-top: 0.7rem;
+  padding: 0.72rem 0.9rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(110deg, #718eaf, #8d7fab);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(77, 94, 128, 0.17);
+  font-size: 0.68rem;
+  font-weight: 760;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.tox-cultivate-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(77, 94, 128, 0.23);
+}
+
+.tox-parameters-step {
+  margin-top: 1.5rem;
+}
+
+.tox-parameter-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.tox-parameter-list label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.3rem 0.8rem;
+  color: #65758a;
+  font-size: 0.62rem;
+}
+
+.tox-parameter-list output {
+  color: #8090a4;
+  font-variant-numeric: tabular-nums;
+}
+
+.tox-parameter-list input {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 0.2rem;
+  accent-color: #8795bd;
+}
+
+.tox-specimen-reading {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.45rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(88, 107, 132, 0.08);
+}
+
+.tox-specimen-reading > span {
+  display: grid;
+  place-items: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(145deg, #dce9f1, #e5dded);
+  color: #746c9a;
+  font-size: 1.25rem;
+}
+
+.tox-specimen-reading small {
+  color: #909baa;
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+}
+
+.tox-specimen-reading h2 {
+  margin: 0.08rem 0 0.12rem;
+  color: #3b4b61;
+  font-size: 1rem;
+  font-weight: 760;
+}
+
+.tox-specimen-reading p {
+  margin: 0;
+  color: #728095;
+  font-size: 0.58rem;
+}
+
+.tox-culture-console blockquote {
+  margin: 0.8rem 0 0;
+  padding-left: 0.8rem;
+  border-left: 2px solid rgba(130, 139, 181, 0.28);
+  color: #647389;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.68rem;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.tox-life-field {
+  position: relative;
+  min-width: 0;
+  min-height: 46rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.72), transparent 45%),
+    linear-gradient(145deg, rgba(224, 235, 243, 0.52), rgba(237, 228, 244, 0.34) 54%, rgba(247, 242, 228, 0.32));
+}
+
+.tox-life-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.tox-field-hud {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.tox-field-hud span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #67788f;
+  font-size: 0.52rem;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+}
+
+.tox-field-hud span i {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #899ac6;
+  box-shadow: 0 0 0 0.28rem rgba(137, 154, 198, 0.12);
+}
+
+.tox-field-hud p {
+  margin: 0;
+  color: #8b97a7;
+  font-size: 0.44rem;
+  letter-spacing: 0.08em;
+}
+
+.tox-field-actions {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.tox-field-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.48rem 0.64rem;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.66);
+  color: #637389;
+  box-shadow: 0 7px 20px rgba(57, 74, 96, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 0.56rem;
+  font-weight: 720;
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.tox-field-actions button:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.tox-dream-archive {
+  max-width: 1160px;
+  margin-top: 2rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tox-dream-archive header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.tox-dream-archive header span {
+  color: #7f8da0;
+  font-size: 0.52rem;
+  font-weight: 760;
+  letter-spacing: 0.13em;
+}
+
+.tox-dream-archive header p {
+  margin: 0;
+  color: #8b97a6;
+  font-size: 0.56rem;
+}
+
+.tox-dream-archive > div {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+}
+
+.tox-dream-archive button {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 10rem;
+  padding: 0.55rem;
+  border: 1px solid rgba(90, 109, 135, 0.07);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.6);
+  color: #58697e;
+  text-align: left;
+}
+
+.tox-dream-archive button i {
+  font-size: 1.15rem;
+  font-style: normal;
+  text-align: center;
+}
+
+.tox-dream-archive button span {
+  font-size: 0.62rem;
+  font-weight: 720;
+}
+
+.tox-dream-archive button small {
+  display: block;
+  margin-top: 0.12rem;
+  color: #929dab;
+  font-size: 0.44rem;
+  font-weight: 500;
+}
+
+.tox-symbolic-phase {
+  max-width: 1180px;
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
+
+.tox-symbolic-phase > header {
+  width: min(100%, 52rem);
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+
+.tox-symbolic-phase > header h2 {
+  margin: 0;
+  color: #2f3d50;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+}
+
+.tox-symbolic-phase > header p {
+  margin: 0.75rem 0 0;
+  color: #718095;
+  font-size: 0.8rem;
+}
+
+.tox-symbolic-phase .about-tarot-card {
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .tox-section.tox-experiment-page {
+    padding: 7.4rem 0 3rem;
+  }
+
+  .tox-experiment-intro {
+    margin-bottom: 2.6rem;
+  }
+
+  .tox-experiment-intro h1 {
+    font-size: clamp(3.15rem, 16vw, 4.5rem);
+  }
+
+  .tox-culture-lab {
+    grid-template-columns: 1fr;
+    width: calc(100% - 1.2rem);
+    border-radius: 1.4rem;
+  }
+
+  .tox-culture-console {
+    border-right: 0;
+    border-bottom: 1px solid rgba(88, 107, 132, 0.08);
+  }
+
+  .tox-life-field {
+    min-height: 34rem;
+  }
+
+  .tox-field-hud {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .tox-field-actions {
+    right: 0.65rem;
+    bottom: 0.65rem;
+    gap: 0.3rem;
+  }
+
+  .tox-field-actions button {
+    padding: 0.44rem 0.52rem;
+    font-size: 0.5rem;
+  }
+
+  .tox-dream-archive {
+    width: calc(100% - 1.2rem);
+  }
+
+  .tox-dream-archive header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .tox-symbolic-phase {
+    padding-top: 5.5rem;
+  }
+}
+
+/* The footer lives outside .about-section; match Home's footer exactly. */
+body:has(.about-section) .footer {
+  background-color: transparent !important;
+  background-image:
+    linear-gradient(rgba(246, 249, 255, 0.98), rgba(252, 250, 255, 0.98)),
+    linear-gradient(90deg, rgba(191, 226, 255, 0.28), rgba(221, 212, 255, 0.24)) !important;
+}
+
+/* Independent To.X tarot page. */
+.tox-section {
+  --tox-ink: #eef3fb;
+  --tox-muted: #9ba8ba;
+  --tox-blue: #8fa9df;
+  --tox-violet: #9e90ca;
+  --about-ink: #303b4d;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 8.6rem 0 5.5rem;
+  background:
+    radial-gradient(70rem 44rem at 88% 8%, rgba(86, 105, 158, 0.24), transparent 72%),
+    radial-gradient(62rem 42rem at 6% 54%, rgba(85, 65, 125, 0.2), transparent 74%),
+    radial-gradient(circle at 50% 30%, rgba(85, 112, 146, 0.13), transparent 38rem),
+    linear-gradient(180deg, #0a101b 0%, #0c1421 48%, #111827 100%);
+  color: var(--tox-ink);
+}
+
+.tox-page {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+}
+
+.tox-ambient {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.tox-ambient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.46;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(231, 238, 255, 0.62) 0 0.7px, transparent 1px),
+    radial-gradient(circle at 72% 14%, rgba(201, 216, 255, 0.5) 0 0.8px, transparent 1.1px),
+    radial-gradient(circle at 86% 66%, rgba(213, 204, 255, 0.45) 0 0.7px, transparent 1px),
+    radial-gradient(circle at 28% 82%, rgba(231, 238, 255, 0.42) 0 0.7px, transparent 1px);
+  background-size: 19rem 17rem, 23rem 21rem, 29rem 25rem, 31rem 27rem;
+}
+
+.tox-ambient-orbit {
+  position: absolute;
+  top: -24rem;
+  left: 50%;
+  width: 72rem;
+  height: 72rem;
+  border: 1px solid rgba(159, 177, 216, 0.07);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 8rem rgba(150, 169, 210, 0.018),
+    0 0 0 18rem rgba(150, 169, 210, 0.012);
+  transform: translateX(-50%);
+}
+
+.tox-ambient-glow {
+  position: absolute;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0.17;
+}
+
+.tox-ambient-glow-one {
+  top: 12rem;
+  right: -8rem;
+  background: #7899d4;
+}
+
+.tox-ambient-glow-two {
+  bottom: 14rem;
+  left: -10rem;
+  background: #8169af;
+}
+
+.tox-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+  align-items: end;
+  gap: clamp(2rem, 6vw, 6rem);
+  margin-bottom: 4.2rem;
+  text-align: left;
+}
+
+.tox-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  margin-bottom: 1.1rem;
+  color: #92a5c5;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tox-eyebrow svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.tox-hero h1 {
+  margin: 0;
+  color: var(--tox-ink);
+  font-size: clamp(3.1rem, 7vw, 6.4rem);
+  font-weight: 650;
+  letter-spacing: -0.065em;
+  line-height: 0.88;
+}
+
+.tox-hero h1 strong {
+  color: transparent;
+  background: linear-gradient(100deg, #f0f4fb 12%, #9eb4dc 58%, #a99aca 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: inherit;
+}
+
+.tox-hero-copy > p {
+  max-width: 36rem;
+  margin: 1.45rem 0 0;
+  color: var(--tox-muted);
+  font-size: clamp(0.86rem, 1.4vw, 1rem);
+  line-height: 1.72;
+}
+
+.tox-observation-panel {
+  padding: 1.2rem 1.25rem;
+  border: 1px solid rgba(168, 187, 220, 0.11);
+  border-radius: 1.15rem;
+  background: rgba(19, 29, 45, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.tox-status-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(168, 187, 220, 0.08);
+}
+
+.tox-status-heading span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: #b4c3d9;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.tox-status-heading span svg {
+  color: #8fadd2;
+}
+
+.tox-status-heading i {
+  color: #687991;
+  font-size: 0.55rem;
+  font-style: normal;
+  letter-spacing: 0.12em;
+}
+
+.tox-observation-panel dl {
+  display: grid;
+  gap: 0.58rem;
+  margin: 0.9rem 0 0;
+}
+
+.tox-observation-panel dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tox-observation-panel dt,
+.tox-observation-panel dd {
+  margin: 0;
+  font-size: 0.64rem;
+  font-weight: 500;
+}
+
+.tox-observation-panel dt {
+  color: #68788e;
+}
+
+.tox-observation-panel dd {
+  color: #aebbd0;
+  text-align: right;
+}
+
+.tox-oracle-stage {
+  position: relative;
+  padding: 1.8rem 0;
+}
+
+.tox-stage-label {
+  position: absolute;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #718199;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.tox-stage-label svg {
+  color: #8da5c9;
+}
+
+.tox-stage-label-left {
+  left: 1rem;
+}
+
+.tox-stage-label-right {
+  right: 1rem;
+}
+
+.tox-oracle-stage .about-tarot-card {
+  margin-top: 0;
+}
+
+.tox-lab-note {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.4rem;
+  margin-top: 2.2rem;
+  color: #64758c;
+}
+
+.tox-lab-note::before,
+.tox-lab-note::after {
+  content: "";
+  display: none;
+}
+
+.tox-lab-note span {
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tox-lab-note span:last-child {
+  text-align: right;
+}
+
+.tox-lab-note p {
+  margin: 0;
+  color: #8b99ad;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.footer-theme-tox {
+  background: #111827 !important;
+  color: #77869b !important;
+}
+
+.footer-theme-tox h2,
+.footer-theme-tox h3 {
+  color: #77869b !important;
+}
+
+body:has(.tox-section) .navbar,
+body:has(.tox-section) .navbar.sticky {
+  background: rgba(10, 16, 27, 0.68) !important;
+  box-shadow: 0 1px 0 rgba(171, 190, 222, 0.06) !important;
+  backdrop-filter: blur(18px) saturate(1.05) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.05) !important;
+}
+
+body:has(.tox-section) .navbar .navbar-nav .nav-link {
+  color: rgba(235, 241, 250, 0.84) !important;
+}
+
+body:has(.tox-section) .navbar .navbar-toggler span {
+  background-color: rgba(235, 241, 250, 0.84) !important;
+}
+
+@media (max-width: 767px) {
+  .tox-section {
+    padding: 7rem 0 3.6rem;
+  }
+
+  .tox-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .tox-hero h1 {
+    font-size: clamp(3rem, 16vw, 4.6rem);
+  }
+
+  .tox-observation-panel {
+    width: 100%;
+  }
+
+  .tox-oracle-stage {
+    padding-top: 1.5rem;
+  }
+
+  .tox-stage-label {
+    font-size: 0.48rem;
+  }
+
+  .tox-stage-label-left {
+    left: 0.4rem;
+  }
+
+  .tox-stage-label-right {
+    right: 0.4rem;
+  }
+
+  .tox-lab-note {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    margin-top: 1.4rem;
+  }
+
+  .tox-lab-note span,
+  .tox-lab-note span:last-child,
+  .tox-lab-note p {
+    text-align: center;
+  }
+}
+
+/* To.X light observatory — editorial laboratory layout. */
+.tox-section {
+  --tox-ink: #263346;
+  --tox-muted: #6f7d8f;
+  --tox-blue: #7f9dcb;
+  --tox-violet: #9688bd;
+  background:
+    radial-gradient(46rem 34rem at 92% 4%, rgba(180, 204, 230, 0.46), transparent 72%),
+    radial-gradient(42rem 32rem at 5% 48%, rgba(221, 210, 234, 0.38), transparent 74%),
+    radial-gradient(36rem 28rem at 58% 76%, rgba(255, 248, 231, 0.48), transparent 76%),
+    linear-gradient(180deg, #f4f7f8 0%, #edf2f5 52%, #f8f8f5 100%);
+  color: var(--tox-ink);
+}
+
+.tox-ambient::before {
+  opacity: 0.52;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(97, 116, 145, 0.32) 0 0.7px, transparent 1px),
+    radial-gradient(circle at 72% 14%, rgba(105, 127, 159, 0.28) 0 0.8px, transparent 1.1px),
+    radial-gradient(circle at 86% 66%, rgba(132, 112, 159, 0.24) 0 0.7px, transparent 1px),
+    radial-gradient(circle at 28% 82%, rgba(97, 116, 145, 0.22) 0 0.7px, transparent 1px);
+}
+
+.tox-ambient-orbit {
+  top: -30rem;
+  border-color: rgba(86, 107, 139, 0.09);
+  box-shadow:
+    0 0 0 8rem rgba(109, 132, 168, 0.025),
+    0 0 0 18rem rgba(109, 132, 168, 0.018);
+}
+
+.tox-ambient-glow-one {
+  background: #a7c4df;
+  opacity: 0.22;
+}
+
+.tox-ambient-glow-two {
+  background: #c1b1d4;
+  opacity: 0.2;
+}
+
+.tox-hero {
+  grid-template-columns: minmax(0, 1.2fr) minmax(21rem, 0.8fr);
+  align-items: center;
+  min-height: 31rem;
+  margin-bottom: 1.4rem;
+}
+
+.tox-eyebrow {
+  color: #7385a0;
+}
+
+.tox-hero h1 {
+  color: #273447;
+}
+
+.tox-hero h1 strong {
+  background: linear-gradient(100deg, #273447 10%, #748fb8 58%, #9385b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.tox-hero-copy > p {
+  color: #6d7989;
+}
+
+.tox-celestial-instrument {
+  --instrument-tilt-x: 0deg;
+  --instrument-tilt-y: 0deg;
+  position: relative;
+  justify-self: end;
+  width: min(32vw, 23rem);
+  min-width: 20rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(91, 112, 143, 0.13);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.86) 0 17%, transparent 17.4%),
+    conic-gradient(from 14deg, rgba(111, 134, 168, 0.08), transparent 12%, rgba(147, 129, 177, 0.08) 28%, transparent 42%, rgba(111, 134, 168, 0.08) 68%, transparent 82%),
+    rgba(255, 255, 255, 0.32);
+  box-shadow:
+    0 24px 70px rgba(56, 72, 94, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: perspective(900px) rotateX(var(--instrument-tilt-x)) rotateY(var(--instrument-tilt-y)) rotateZ(-6deg);
+  transform-style: preserve-3d;
+  transition: transform 180ms ease-out, box-shadow 220ms ease;
+}
+
+.tox-celestial-instrument:hover {
+  box-shadow:
+    0 32px 82px rgba(56, 72, 94, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.tox-celestial-instrument::before,
+.tox-celestial-instrument::after {
+  content: "";
+  position: absolute;
+  inset: 9%;
+  border: 1px solid rgba(91, 112, 143, 0.12);
+  border-radius: 50%;
+}
+
+.tox-celestial-instrument::after {
+  inset: 24%;
+  border-style: dashed;
+  border-color: rgba(134, 116, 163, 0.18);
+}
+
+.tox-instrument-orbit {
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  width: 88%;
+  height: 30%;
+  border: 1px solid rgba(91, 112, 143, 0.18);
+  border-radius: 50%;
+  transform: translateY(-50%) rotate(24deg);
+}
+
+.tox-instrument-orbit-b {
+  transform: translateY(-50%) rotate(92deg);
+}
+
+.tox-instrument-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 6.6rem;
+  height: 6.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(248, 250, 252, 0.9);
+  box-shadow: 0 12px 36px rgba(64, 79, 100, 0.12);
+  transform: translate(-50%, -50%);
+}
+
+.tox-instrument-core strong {
+  align-self: end;
+  color: #34445b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.78rem;
+  letter-spacing: -0.04em;
+}
+
+.tox-instrument-core small {
+  align-self: start;
+  color: #8794a6;
+  font-size: 0.47rem;
+  letter-spacing: 0.13em;
+}
+
+.tox-instrument-node {
+  position: absolute;
+  z-index: 3;
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: #849fc9;
+  box-shadow: 0 4px 12px rgba(76, 99, 133, 0.2);
+}
+
+.tox-instrument-node-a { top: 17%; left: 31%; }
+.tox-instrument-node-b { top: 42%; right: 7%; background: #9a89bb; }
+.tox-instrument-node-c { bottom: 11%; left: 42%; background: #c1a278; }
+
+.tox-instrument-coordinate {
+  position: absolute;
+  right: 10%;
+  bottom: 17%;
+  color: #8693a5;
+  font-size: 0.48rem;
+  letter-spacing: 0.12em;
+  transform: rotate(6deg);
+}
+
+.tox-zodiac-ring {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: 50%;
+}
+
+.tox-zodiac-ring button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 1.62rem;
+  height: 1.62rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 50%;
+  background: rgba(247, 250, 252, 0.72);
+  color: #7d899a;
+  box-shadow: 0 4px 14px rgba(56, 72, 94, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.76rem;
+  line-height: 1;
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(var(--zodiac-index) * 30deg))
+    translateY(-9.75rem)
+    rotate(calc(var(--zodiac-index) * -30deg));
+  transition: color 160ms ease, background-color 160ms ease, box-shadow 160ms ease, scale 160ms ease;
+}
+
+.tox-zodiac-ring button:hover,
+.tox-zodiac-ring button:focus-visible {
+  z-index: 2;
+  background: #fff;
+  color: #516887;
+  box-shadow: 0 7px 20px rgba(57, 77, 104, 0.16);
+  outline: 0;
+  scale: 1.14;
+}
+
+.tox-zodiac-ring button.is-active {
+  background: linear-gradient(145deg, #748fb8, #9485b4);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgba(125, 147, 185, 0.13), 0 8px 22px rgba(69, 85, 116, 0.2);
+  scale: 1.12;
+}
+
+.tox-observation-panel {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-color: rgba(91, 112, 143, 0.12);
+  border-radius: 1.1rem;
+  background: rgba(255, 255, 255, 0.48);
+  box-shadow: 0 14px 38px rgba(57, 75, 98, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.tox-status-heading {
+  padding: 0 1.1rem 0 0;
+  border-right: 1px solid rgba(91, 112, 143, 0.1);
+  border-bottom: 0;
+}
+
+.tox-status-heading span {
+  color: #596a81;
+}
+
+.tox-status-heading span svg {
+  color: #7f9ac2;
+}
+
+.tox-status-heading i {
+  color: #8b97a7;
+}
+
+.tox-status-heading button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36rem;
+  padding: 0.36rem 0.56rem;
+  border: 1px solid rgba(100, 121, 152, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.66);
+  color: #6d7c90;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.tox-status-heading button:hover {
+  transform: translateY(-1px);
+  background: #fff;
+  color: #40536d;
+}
+
+.tox-status-heading button:hover svg {
+  transform: rotate(90deg);
+}
+
+.tox-status-heading button svg {
+  transition: transform 260ms ease;
+}
+
+.tox-observation-panel dl {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+}
+
+.tox-observation-panel dl div {
+  display: block;
+  padding: 0.12rem 1rem;
+  border-left: 1px solid rgba(91, 112, 143, 0.08);
+}
+
+.tox-observation-panel dl div:first-child {
+  border-left: 0;
+}
+
+.tox-observation-panel dt {
+  margin-bottom: 0.24rem;
+  color: #8a96a6;
+}
+
+.tox-observation-panel dd {
+  color: #526277;
+  text-align: left;
+}
+
+.tox-signal-readout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.4rem;
+  min-height: 4.4rem;
+  margin: 0 0 4.2rem;
+  padding: 0.8rem 1.1rem;
+  color: #58697f;
+}
+
+.tox-signal-readout::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0.22rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #7896c3, #9b8ab9);
+  transform: translateY(-50%);
+}
+
+.tox-signal-readout span {
+  color: #8a96a6;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.tox-signal-readout p {
+  margin: 0;
+  color: #506176;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.tox-signal-readout i {
+  color: rgba(116, 137, 171, 0.34);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  font-style: normal;
+}
+
+.tox-stage-label {
+  color: #78879a;
+}
+
+.tox-stage-label svg {
+  color: #809bc2;
+}
+
+.tox-lab-note {
+  color: #8190a2;
+}
+
+.tox-lab-note p {
+  color: #6f7d90;
+}
+
+.footer-theme-tox {
+  background: #f8f8f5 !important;
+  color: #77869b !important;
+}
+
+.footer-theme-tox h2,
+.footer-theme-tox h3 {
+  color: #77869b !important;
+}
+
+body:has(.tox-section) .navbar,
+body:has(.tox-section) .navbar.sticky {
+  background: rgba(244, 247, 248, 0.74) !important;
+  box-shadow: 0 1px 0 rgba(73, 91, 116, 0.06) !important;
+}
+
+body:has(.tox-section) .navbar .navbar-nav .nav-link {
+  color: #263346 !important;
+}
+
+body:has(.tox-section) .navbar .navbar-toggler span {
+  background-color: #263346 !important;
+}
+
+@media (max-width: 767px) {
+  body:has(.tox-section) .navbar:has(.navbar-collapse.show),
+  body:has(.tox-section) .navbar:has(.navbar-collapse.collapsing) {
+    background: rgba(232, 232, 232, 0.24) !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+  }
+
+  body:has(.tox-section) .navbar.sticky:has(.navbar-collapse.show),
+  body:has(.tox-section) .navbar.sticky:has(.navbar-collapse.collapsing) {
+    background: rgba(224, 223, 223, 0.66) !important;
+    box-shadow: 0 10px 10px rgba(9, 5, 29, 0.171) !important;
+  }
+
+  .tox-hero {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: 2.4rem;
+    min-height: 0;
+    margin-bottom: 2.4rem;
+  }
+
+  .tox-hero-copy {
+    min-width: 0;
+  }
+
+  .tox-hero h1 {
+    max-width: 100%;
+    font-size: clamp(3rem, 15vw, 4.35rem);
+    line-height: 0.9;
+  }
+
+  .tox-hero-copy > p {
+    max-width: 22rem;
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .tox-celestial-instrument {
+    justify-self: center;
+    width: min(82vw, 21rem);
+    min-width: 0;
+  }
+
+  .tox-zodiac-ring button {
+    transform:
+      translate(-50%, -50%)
+      rotate(calc(var(--zodiac-index) * 30deg))
+      translateY(-35vw)
+      rotate(calc(var(--zodiac-index) * -30deg));
+  }
+
+  .tox-observation-panel {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-bottom: 3rem;
+  }
+
+  .tox-signal-readout {
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 1rem;
+    margin-bottom: 3rem;
+    padding-left: 0.9rem;
+  }
+
+  .tox-signal-readout span {
+    grid-column: 1;
+  }
+
+  .tox-signal-readout p {
+    grid-column: 1 / -1;
+    font-size: 0.84rem;
+  }
+
+  .tox-signal-readout i {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .tox-status-heading {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    padding: 0 0 0.75rem;
+    border-right: 0;
+    border-bottom: 1px solid rgba(91, 112, 143, 0.1);
+  }
+
+  .tox-observation-panel dl {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .tox-observation-panel dl div,
+  .tox-observation-panel dl div:first-child {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border: 0;
+  }
+
+  .tox-observation-panel dt {
+    margin: 0;
+  }
+
+  .tox-observation-panel dd {
+    text-align: right;
+  }
+}
