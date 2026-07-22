@@ -3,6 +3,17 @@
 
 <head>
   <meta charset="utf-8" />
+  <script>
+    (function () {
+      var base = document.createElement("base");
+      var legacyPagesPath = "/anleeno-portfolio";
+      var isLegacyProjectPage = window.location.hostname.toLowerCase() === "anleeno.github.io"
+        && (window.location.pathname === legacyPagesPath
+          || window.location.pathname.indexOf(legacyPagesPath + "/") === 0);
+      base.href = isLegacyProjectPage ? legacyPagesPath + "/" : "/";
+      document.head.appendChild(base);
+    }());
+  </script>
   <link rel="icon" href="%PUBLIC_URL%/Anleeno.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />

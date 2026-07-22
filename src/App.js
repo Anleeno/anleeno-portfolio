@@ -25,9 +25,11 @@ import FloatingPlayer from "./components/Music/FloatingPlayer";
 
 function App() {
   const [load, upadateLoad] = useState(true);
-  const routerBasename = window.location.hostname.toLowerCase() === "anleeno.github.io"
-    ? "/anleeno-portfolio"
-    : "/";
+  const legacyPagesPath = "/anleeno-portfolio";
+  const isLegacyProjectPage = window.location.hostname.toLowerCase() === "anleeno.github.io"
+    && (window.location.pathname === legacyPagesPath
+      || window.location.pathname.startsWith(`${legacyPagesPath}/`));
+  const routerBasename = isLegacyProjectPage ? legacyPagesPath : "/";
 
   useEffect(() => {
     const timer = setTimeout(() => {

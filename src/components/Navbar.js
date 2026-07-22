@@ -14,6 +14,11 @@ import {
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const legacyPagesPath = "/anleeno-portfolio";
+  const isLegacyProjectPage = window.location.hostname.toLowerCase() === "anleeno.github.io"
+    && (window.location.pathname === legacyPagesPath
+      || window.location.pathname.startsWith(`${legacyPagesPath}/`));
+  const homeHref = isLegacyProjectPage ? `${legacyPagesPath}/` : "/";
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -33,7 +38,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand href={homeHref} className="d-flex">
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -49,7 +54,7 @@ function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
+              <Nav.Link href={homeHref} onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
