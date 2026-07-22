@@ -89,6 +89,10 @@
   line-height: 1.45rem !important;
 }
 
+.about-section .about-bio-lines li {
+  align-items: start !important;
+}
+
 .about-section .about-bio-line-icon,
 .about-section .about-bio-experience > p .about-bio-line-icon {
   display: inline-grid !important;

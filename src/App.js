@@ -39,6 +39,24 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const isMediaTarget = (target) =>
+      target instanceof Element && Boolean(target.closest("img, video"));
+    const preventMediaAction = (event) => {
+      if (isMediaTarget(event.target)) {
+        event.preventDefault();
+      }
+    };
+
+    document.addEventListener("contextmenu", preventMediaAction, true);
+    document.addEventListener("dragstart", preventMediaAction, true);
+
+    return () => {
+      document.removeEventListener("contextmenu", preventMediaAction, true);
+      document.removeEventListener("dragstart", preventMediaAction, true);
+    };
+  }, []);
+
   return (
     <AudioPlayerProvider>
       <Router basename={routerBasename}>

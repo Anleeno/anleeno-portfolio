@@ -42,6 +42,8 @@ function FeaturedCard({ work }) {
             playsInline
             preload="metadata"
             disablePictureInPicture
+            disableRemotePlayback
+            controlsList="nodownload noremoteplayback"
             aria-label={`${work.title} demo video`}
           />
         ) : (

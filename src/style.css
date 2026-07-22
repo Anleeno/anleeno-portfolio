@@ -1934,6 +1934,18 @@ button:focus {
 
 /* --------- */
 /* Home section */
+img,
+video {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.home-portrait-image {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 /* --------- */
 .wave {
   animation-name: wave-animation; /* Refers to the name of your @keyframes element below */

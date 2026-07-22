@@ -1,4 +1,5 @@
 import ex from "../Assets/Project/ex.mp4";
+import exPoster from "../Assets/Project/ex-poster.jpg";
 import adas from "../Assets/Project/ADAS.png";
 import leaf_2026 from "../Assets/Publications/2026-leaf.png"
 import vqc_cha_2025 from "../Assets/Publications/2025-vqc-cha.png"
@@ -7,6 +8,7 @@ import doris from "../Assets/Project/doris.png";
 
 const mediaLibrary = {
   ex,
+  exPoster,
   adas,
   leaf_2026,
   vqc_cha_2025,

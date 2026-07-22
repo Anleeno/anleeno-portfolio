@@ -41,7 +41,8 @@ function Home() {
               <img
                 src={homeLogo}
                 alt="home pic"
-                className="img-fluid"
+                className="img-fluid home-portrait-image"
+                draggable={false}
                 style={{ maxHeight: "900px" ,borderRadius:"6rem"}}
               />
             </Col>
