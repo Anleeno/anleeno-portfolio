@@ -25,6 +25,9 @@ import FloatingPlayer from "./components/Music/FloatingPlayer";
 
 function App() {
   const [load, upadateLoad] = useState(true);
+  const routerBasename = window.location.hostname.toLowerCase() === "anleeno.github.io"
+    ? "/anleeno-portfolio"
+    : "/";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -36,7 +39,7 @@ function App() {
 
   return (
     <AudioPlayerProvider>
-      <Router basename="/">
+      <Router basename={routerBasename}>
         <Preloader load={load} />
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <Navbar />

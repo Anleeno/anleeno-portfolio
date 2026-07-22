@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.anleeno.top",
+  "homepage": ".",
   "dependencies": {
     "babel-preset-react-app": "^10.0.1",
     "bootstrap": "^5.1.3",
