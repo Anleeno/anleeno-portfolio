@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 
-const resumePdf = `${process.env.PUBLIC_URL}/Anleeno-Xu-Resume.pdf`;
-const pdfModule = `${process.env.PUBLIC_URL}/pdf.min.mjs`;
-const pdfWorker = `${process.env.PUBLIC_URL}/pdf.worker.min.mjs`;
+const resolvePublicAsset = (fileName) => new URL(fileName, document.baseURI).href;
+const resumePdf = resolvePublicAsset("Anleeno-Xu-Resume.pdf");
+const pdfModule = resolvePublicAsset("pdf.min.mjs");
+const pdfWorker = resolvePublicAsset("pdf.worker.min.mjs");
 
 function ResumePreview({ id }) {
   const previewRef = useRef(null);
@@ -104,7 +105,6 @@ function ResumePreview({ id }) {
         </span>
         Download
       </a>
-      {status === "loading" && <p className="about-resume-loading">Loading resume…</p>}
       {status === "error" && <p className="about-resume-loading">Resume preview could not be loaded.</p>}
       <div className="about-resume-pages" ref={pagesRef} aria-live="polite" />
     </section>
