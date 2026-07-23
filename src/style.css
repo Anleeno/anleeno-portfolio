@@ -2306,6 +2306,14 @@ video {
   margin-top: 0.3em !important;
   margin-bottom: 1em !important;
 }
+
+@media (max-width: 767px) {
+  .footer h2 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+}
+
 .footer-icons {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
