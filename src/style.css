@@ -10656,6 +10656,25 @@ video {
     width: min(100%, 19rem) !important;
     margin: 0 auto !important;
   }
+
+  /* Keep the album inside its grid track. Stretching an aspect-ratio box can
+     make its used width exceed the narrow column and overlap the copy panel. */
+  .about-tarot-reading {
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+    column-gap: 0.82rem;
+  }
+
+  .about-tarot-reading-album {
+    width: 100%;
+    min-width: 0;
+    align-self: start;
+    box-sizing: border-box;
+  }
+
+  .about-tarot-reading-copy {
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
 
 /* Warm original-about palette and final profile/skill visual reset */

@@ -7,7 +7,7 @@ const profileLines = [
     text: (
       <span className="about-bio-interest-copy">
         Interests:{" "}
-        <strong>CV, AIGC, MLLM, and AI4Science.</strong>
+        <strong>CV, AIGC, MLLM, AI4Science.</strong>
       </span>
     )
   }

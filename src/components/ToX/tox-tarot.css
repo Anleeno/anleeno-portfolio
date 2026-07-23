@@ -130,6 +130,31 @@
   -webkit-backdrop-filter: blur(7px) saturate(1.3);
 }
 
+.tarot-world-stage .about-tarot-reading-album,
+.tarot-world-stage .about-tarot-reading-copy {
+  height: 20rem;
+}
+
+.tarot-world-stage .about-tarot-reading-album {
+  aspect-ratio: auto;
+}
+
+.tarot-world-stage .about-tarot-reading-copy {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3.35rem;
+  scrollbar-width: none;
+  overscroll-behavior: none;
+}
+
+.tarot-world-stage .about-tarot-back {
+  position: absolute;
+  left: 1.08rem;
+  bottom: 1rem;
+  z-index: 2;
+  margin: 0;
+}
+
 .arcana-piano {
   position: relative;
   z-index: 3;
@@ -263,6 +288,64 @@ body:has(.tarot-world) .navbar .navbar-toggler span { background-color: #1f1f1f 
 
 @media (max-width: 767px) {
   .tarot-world { min-height: 100svh; padding: 6.8rem .65rem 3rem; }
+
+  .tarot-world-stage .about-tarot-card.is-reading,
+  .tarot-world-stage .about-tarot-card.is-returning {
+    width: calc(100% - .35rem);
+    padding: .78rem .72rem .82rem;
+  }
+
+  .tarot-world-stage .is-reading .about-tarot-heading h2,
+  .tarot-world-stage .is-returning .about-tarot-heading h2 {
+    margin-top: .44rem;
+    font-size: 1.2rem;
+  }
+
+  .tarot-world-stage .is-reading .about-tarot-heading p,
+  .tarot-world-stage .is-returning .about-tarot-heading p {
+    margin-top: .36rem;
+    font-size: .7rem;
+    line-height: 1.4;
+  }
+
+  .tarot-world-stage .about-tarot-reading {
+    grid-template-columns: minmax(0, .62fr) minmax(0, 1fr);
+    column-gap: .62rem;
+    margin-top: .78rem;
+  }
+
+  .tarot-world-stage .about-tarot-reading-album {
+    height: 11.25rem;
+    aspect-ratio: auto;
+  }
+
+  .tarot-world-stage .about-tarot-reading-copy {
+    height: 11.25rem;
+    gap: .28rem;
+    padding: .48rem .48rem 2.55rem;
+  }
+
+  .tarot-world-stage .about-tarot-reading-text {
+    font-size: .6rem;
+    line-height: 1.34;
+  }
+
+  .tarot-world-stage .about-tarot-note-stack {
+    gap: .34rem;
+  }
+
+  .tarot-world-stage .about-tarot-note-stack p {
+    padding-left: .46rem;
+    font-size: .56rem;
+    line-height: 1.3;
+  }
+
+  .tarot-world-stage .about-tarot-back {
+    left: .48rem;
+    bottom: .48rem;
+    min-height: 1.65rem;
+    padding: .28rem .5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

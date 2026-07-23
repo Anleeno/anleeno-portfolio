@@ -116,10 +116,9 @@ export const tarotCards = [
     accent: "#d98c96",
     short: "Beauty, photography, soft rituals, and the habit of saving tiny emotional details.",
     reading:
-      "This card holds the part of me that remembers a day by its color, light, song, and small texture. It is where photography, design taste, visual collecting, and private tenderness become a real working system instead of decoration.",
+      "I remember a day through its color, light, song, and texture. Photography turns those small details into a living visual memory.",
     notes: [
-      "I tend to collect moments visually first: a photo, a palette, a tiny ritual, the feeling of a scene before I can explain why it matters.",
-      "This is the DNA of aesthetic memory. It makes me polish details until the work stops feeling flat and starts feeling like it has a pulse."
+      "I collect moments visually first: a photo, a palette, or the feeling of a scene before I can explain why it matters."
     ]
   },
   {
@@ -133,10 +132,9 @@ export const tarotCards = [
     accent: "#4d9fc2",
     short: "Movement, travel, decisions, execution, and the call of the open wilds.",
     reading:
-      "This card is the part of me that needs motion. It likes routes, deadlines, shifting plans, and the moment a vague direction becomes something I can actually move through. It turns curiosity into action.",
+      "This card turns curiosity into motion: choosing a route, adapting to change, and making a vague direction real.",
     notes: [
-      "It shows up whenever a plan has to become real: choosing a direction, cutting through noise, and finding momentum without losing the larger horizon.",
-      "This is the DNA of movement. I do best when ambition has a map, a reason, and enough open sky to keep going."
+      "I move best when ambition has a map, a reason, and enough open sky to keep the larger horizon in view."
     ]
   },
   {
@@ -150,10 +148,9 @@ export const tarotCards = [
     accent: "#778cd8",
     short: "AI research, long-horizon curiosity, experiments, and quiet technical intensity.",
     reading:
-      "This card is the slow-burning research self. It is drawn to difficult questions, restoration problems, AI systems, and the satisfying moment when an abstract idea becomes something testable and useful.",
+      "This is the slow-burning research self, drawn to difficult questions and the moment an abstract idea becomes testable and useful.",
     notes: [
-      "The interesting part is rarely the first answer. I like staying with a problem long enough for its hidden structure to start showing itself.",
-      "This is the DNA of research drive: patient, technical, quietly stubborn, and more awake when the question is difficult."
+      "I stay with a problem long enough for its hidden structure to appear: patient, technical, and quietly stubborn."
     ]
   },
   {
@@ -167,10 +164,9 @@ export const tarotCards = [
     accent: "#6c73bd",
     short: "Music, live, cherished memories, shared devotion, and the emotional pull of the stage.",
     reading:
-      "This card stores the inner archive: songs, scenes, characters, symbols, and strange emotional echoes. It is the place where feelings are not noise. They are navigation data.",
+      "This card stores an inner archive of songs, scenes, symbols, and emotional echoes — feelings kept as navigation data.",
     notes: [
-      "A song, an anime scene, a card image, or a private symbol can stay with me for years and quietly become part of how I understand myself.",
-      "This is the DNA of the inner soundscape: emotional, symbolic, and surprisingly useful when logic has not caught up yet."
+      "A song or private symbol can stay for years and quietly become part of how I understand myself."
     ]
   }
 ];
@@ -347,11 +343,11 @@ function TarotDNA({ onCardChange }) {
         <div className="about-tarot-bg" aria-hidden="true" />
         <div className="about-tarot-heading">
           <span className="about-tarot-kicker">Personal DNA</span>
-          <h2>{isReading && activeCard ? activeCard.title : "DRAW A CARD. CRAFTING THE DETAILS..."}</h2>
+          <h2>{isReading && activeCard ? activeCard.title : "DRAW A CARD. SEE WHAT IT CONCEALS."}</h2>
           <p>
             {isReading && activeCard
               ? activeCard.short
-              : "Each card opens one slice of my interests, habits, and memories."}
+              : "Each card reveals a theme shaped by interests, habits, and memories."}
           </p>
         </div>
 
@@ -361,7 +357,17 @@ function TarotDNA({ onCardChange }) {
               id={`tarot-${activeCard.id}`}
               onBeforeOpen={attachFilmstrip}
               options={{
-                padding: { top: 110, bottom: 190, left: 180, right: 180 },
+                paddingFn: (viewportSize) => {
+                  if (viewportSize.x <= 767) {
+                    return { top: 64, bottom: 150, left: 16, right: 16 };
+                  }
+
+                  if (viewportSize.x <= 1100) {
+                    return { top: 88, bottom: 170, left: 72, right: 72 };
+                  }
+
+                  return { top: 110, bottom: 190, left: 180, right: 180 };
+                },
                 showHideAnimationType: "zoom"
               }}
             >

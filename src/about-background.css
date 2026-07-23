@@ -89,6 +89,12 @@
   line-height: 1.45rem !important;
 }
 
+.about-section .about-bio-interest-copy,
+.about-section .about-bio-interest-copy strong {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
 .about-section .about-bio-lines li {
   align-items: start !important;
 }
@@ -124,6 +130,8 @@
 
 .about-section .about-bio-tags span,
 .about-section .about-bio-tags span:nth-child(n) {
+  padding: 0.28rem 0.6rem !important;
+  font-size: 0.64rem !important;
   color: #555d68 !important;
   box-shadow: 0 4px 12px rgba(68, 64, 78, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.56) !important;
 }

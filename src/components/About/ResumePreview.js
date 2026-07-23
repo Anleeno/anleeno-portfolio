@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { HiOutlineDocumentDownload } from "react-icons/hi";
 
 const resolvePublicAsset = (fileName) => new URL(fileName, document.baseURI).href;
-const resumePdf = resolvePublicAsset("Anleeno-Xu-Resume.pdf");
+const resumePdf = resolvePublicAsset("Anleeno-Xu-Resume-mini.pdf");
 const pdfModule = resolvePublicAsset("pdf.min.mjs");
 const pdfWorker = resolvePublicAsset("pdf.worker.min.mjs");
 
