@@ -62,12 +62,15 @@ function resolveAuthorTag(tag) {
 
 function resolveCcfLevel(paper) {
   const manual = typeof paper?.ccfLevel === "string" ? paper.ccfLevel.trim().toUpperCase() : "";
-  if (manual === "A" || manual === "B" || manual === "C" || manual === "N") {
+  if (manual === "A" || manual === "B" || manual === "C") {
     return manual;
+  }
+  if (manual || /\bpre[ -]?print\b/i.test(paper?.venue || "")) {
+    return null;
   }
   const venue = paper?.venue || "";
   const inferred = CCF_LEVEL_RULES.find((rule) => rule.pattern.test(venue));
-  return inferred ? inferred.level : "N";
+  return inferred ? inferred.level : null;
 }
 
 function resolveVenueClasses() {
@@ -99,7 +102,7 @@ function PaperSection({ papers, copiedPaper, onCopyCitation }) {
           const venueLevel = resolveVenueLevel(paper);
           return (
             <article
-              className={`portfolio-paper-row is-ccf-${venueLevel.toLowerCase()}`}
+              className={`portfolio-paper-row${venueLevel ? ` is-ccf-${venueLevel.toLowerCase()}` : ""}`}
               key={paper.title}
             >
               <div className="portfolio-paper-cover">
@@ -110,9 +113,11 @@ function PaperSection({ papers, copiedPaper, onCopyCitation }) {
                   <span className="portfolio-paper-year">{paper.year}</span>
                   <span className={resolveVenueClasses()}>
                     <span className="portfolio-paper-venue-text">{paper.venue}</span>
-                    <span className={`portfolio-paper-venue-level is-ccf-${venueLevel.toLowerCase()}`}>
-                      CCF {venueLevel}
-                    </span>
+                    {venueLevel ? (
+                      <span className={`portfolio-paper-venue-level is-ccf-${venueLevel.toLowerCase()}`}>
+                        CCF {venueLevel}
+                      </span>
+                    ) : null}
                   </span>
                 </div>
                 <h3>{paper.title}</h3>
