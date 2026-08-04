@@ -32,7 +32,7 @@ function FeaturedCard({ work }) {
       onMouseEnter={playPreview}
       onMouseLeave={resetPreview}
     >
-      <div className="portfolio-feature-image">
+      <div className={`portfolio-feature-image${isVideoWork(work) ? " is-video" : ""}`}>
         {isVideoWork(work) ? (
           <video
             src={work.image}
@@ -54,6 +54,7 @@ function FeaturedCard({ work }) {
         <span className={`portfolio-feature-badge type-${type}`}>{work.badge}</span>
         <h3>{work.title}</h3>
         <p>{work.description}</p>
+        {work.tip && <div className="portfolio-feature-tip">{work.tip}</div>}
         <ActionElement
           className={`portfolio-feature-action ${hasLink ? "" : "is-static"}`}
           {...(hasLink ? { href: work.link, target: "_blank", rel: "noreferrer" } : {})}
