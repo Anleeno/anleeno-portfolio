@@ -135,8 +135,15 @@
   height: 20rem;
 }
 
+.tarot-world-stage .about-tarot-reading {
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
 .tarot-world-stage .about-tarot-reading-album {
-  aspect-ratio: auto;
+  width: auto;
+  aspect-ratio: 2 / 3;
+  justify-self: start;
+  box-sizing: border-box;
 }
 
 .tarot-world-stage .about-tarot-reading-copy {
@@ -309,14 +316,15 @@ body:has(.tarot-world) .navbar .navbar-toggler span { background-color: #1f1f1f 
   }
 
   .tarot-world-stage .about-tarot-reading {
-    grid-template-columns: minmax(0, .62fr) minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
     column-gap: .62rem;
     margin-top: .78rem;
   }
 
   .tarot-world-stage .about-tarot-reading-album {
     height: 11.25rem;
-    aspect-ratio: auto;
+    width: auto;
+    aspect-ratio: 2 / 3;
   }
 
   .tarot-world-stage .about-tarot-reading-copy {

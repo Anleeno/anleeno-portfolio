@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
+import { TbZodiacLeo } from "react-icons/tb";
 import {
   FiArrowLeft,
   FiChevronLeft,
   FiChevronRight,
   FiCompass,
-  FiHeart,
   FiMaximize2,
   FiMusic,
   FiZap
@@ -21,11 +21,12 @@ import tarotShell from "../../Assets/Tarot/t4.png";
 import tarotShellGold from "../../Assets/Tarot/t4-gold.png";
 
 const bloomImageContext = require.context("../../Assets/Tarot/bloom", false, /\.(png|jpe?g|webp)$/i);
-const compassImageContext = require.context("../../Assets/Tarot/compass", false, /\.(png|jpe?g|webp)$/i);
+const voyageImageContext = require.context("../../Assets/Tarot/voyage", false, /\.(png|jpe?g|webp)$/i);
 const beaconImageContext = require.context("../../Assets/Tarot/beacon", false, /\.(png|jpe?g|webp)$/i);
 const soundscapeImageContext = require.context("../../Assets/Tarot/soundscape", false, /\.(png|jpe?g|webp)$/i);
 
 const tarotGalleryDimensions = {
+  "0805": { width: 2560, height: 3840 },
   "1_jp": { width: 1080, height: 1620 },
   "2_jp": { width: 1290, height: 1922 },
   "3_jp": { width: 1290, height: 1922 },
@@ -35,6 +36,7 @@ const tarotGalleryDimensions = {
 
 const tarotGalleryRecords = {
   "1_jp": {
+    timestamp: "2025.04.30",
     title: "Little Deer in Nara",
     reading: "Some journeys stay with me through a small pause rather than a landmark — a moment when the world slows down and curiosity meets me halfway.",
     notes: [
@@ -42,6 +44,7 @@ const tarotGalleryRecords = {
     ]
   },
   "2_jp": {
+    timestamp: "2025.05.03",
     title: "Mario World at USJ",
     reading: "Travel is also permission to step inside a world that once existed only on a screen and let playfulness lead for a while.",
     notes: [
@@ -49,6 +52,7 @@ const tarotGalleryRecords = {
     ]
   },
   "3_jp": {
+    timestamp: "2025.05.03",
     title: "Mario World at USJ",
     reading: "I like places that take delight seriously. Humor, color, and tiny visual surprises can make a memory feel unexpectedly alive.",
     notes: [
@@ -56,6 +60,7 @@ const tarotGalleryRecords = {
     ]
   },
   "4_skydiving": {
+    timestamp: "2023.08.26",
     title: "Freefall Skydiving",
     reading: "There is a particular clarity in choosing the unknown on purpose — the instant hesitation gives way to motion and the horizon opens beneath you.",
     notes: [
@@ -63,12 +68,21 @@ const tarotGalleryRecords = {
     ]
   },
   "the_tense": {
+    timestamp: "2025.04.26",
     title: "The Tense in Macau",
-    reading: "Some memories arrive as sound before they become language: a stage, a shared chorus, and thousands of lights moving as one.",
+    reading: "Some echoes linger in scent and sound before they settle into words: a gentle fragrance in the air, a shared chorus, and a sea of lights breathing together.",
     notes: [
-      "Live music turns a private emotion into a collective atmosphere — brief, overwhelming, and impossible to reproduce in quite the same way."
+      "Seventeen years of waiting unfolds through The Tense — turning love across past, present, and future into a collective atmosphere, brief, overwhelming, and impossible to reproduce in quite the same way."
     ]
-  }
+  },
+  "0805": {
+    timestamp: "2026.08.05",
+    title: "Happy Birthday",
+    reading: "This birthday feels like a deep, fearless breath under an open sky — a quiet realization that I am growing, living, and exactly on my own path.",
+    notes: [
+      "Happy birthday to me: lingering light, a sweet slice of cake, and another year of chasing dreams with a gentle heart.",
+    ]
+  },
 };
 
 const createFolderGallery = (imageContext, captionPrefix) => imageContext
@@ -100,7 +114,7 @@ const createFolderGallery = (imageContext, captionPrefix) => imageContext
   });
 
 const bloomGallery = createFolderGallery(bloomImageContext, "Bloom Archive");
-const compassGallery = createFolderGallery(compassImageContext, "Open Route");
+const voyageGallery = createFolderGallery(voyageImageContext, "Open Route");
 const beaconGallery = createFolderGallery(beaconImageContext, "Signal Beacon");
 const soundscapeGallery = createFolderGallery(soundscapeImageContext, "Inner Soundscape");
 
@@ -109,7 +123,7 @@ export const tarotCards = [
     id: "bloom",
     title: "The Bloom Archive",
     subtitle: "Aesthetic Memory",
-    icon: <FiHeart />,
+    icon: <TbZodiacLeo />,
     image: tarotBloom,
     goldImage: tarotBloomGold,
     imageAlt: "Floral tarot card with camera lens and pearls",
@@ -123,7 +137,7 @@ export const tarotCards = [
   },
   {
     id: "compass",
-    title: "The Celestial Compass",
+    title: "The Wayfarer’s Voyage",
     subtitle: "Explorer Mode",
     icon: <FiCompass />,
     image: tarotCompass,
@@ -173,7 +187,7 @@ export const tarotCards = [
 
 const tarotGallery = {
   bloom: bloomGallery,
-  compass: compassGallery,
+  compass: voyageGallery,
   star: beaconGallery,
   moon: soundscapeGallery
 };
@@ -290,13 +304,12 @@ function TarotDNA({ onCardChange }) {
         ]
     : [];
   const activeGalleryItem = activeGallery[activeGalleryIndex] || activeGallery[0];
-  const activeRecord = activeGalleryItem && activeGalleryItem.record
-    ? activeGalleryItem.record
-    : {
-        title: activeCard ? activeCard.subtitle : "",
-        reading: activeCard ? activeCard.reading : "",
-        notes: activeCard ? activeCard.notes : []
-      };
+  const activeRecord = {
+    title: activeCard ? activeCard.subtitle : "",
+    reading: activeCard ? activeCard.reading : "",
+    notes: activeCard ? activeCard.notes : [],
+    ...(activeGalleryItem && activeGalleryItem.record ? activeGalleryItem.record : {})
+  };
 
   const showGalleryImage = (index) => {
     if (!activeGallery.length) return;
@@ -469,6 +482,12 @@ function TarotDNA({ onCardChange }) {
                   <p key={note}>{note}</p>
                 ))}
               </div>
+              {activeRecord.timestamp ? (
+                <time className="about-tarot-reading-timestamp">
+                  <span aria-hidden="true">—</span>
+                  {activeRecord.timestamp}
+                </time>
+              ) : null}
               <button type="button" className="about-tarot-back" onClick={returnToDeck}>
                 <FiArrowLeft />
                 Back
