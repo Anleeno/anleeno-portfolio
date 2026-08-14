@@ -4803,6 +4803,7 @@ video {
 }
 
 .portfolio-feature-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -4878,12 +4879,21 @@ video {
 
 .portfolio-feature-badge {
   display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
   padding: 0.28rem 0.7rem;
   border-radius: 999px;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.portfolio-feature-badge svg {
+  flex: 0 0 auto;
+  width: 0.82rem;
+  height: 0.82rem;
+  stroke-width: 0.35;
 }
 
 .portfolio-feature-badge.type-paper {
@@ -4936,6 +4946,9 @@ video {
 }
 
 .portfolio-feature-tip {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
   margin: 0 0 0.85rem;
   padding: 0.52rem 0.7rem;
   border-left: 2px solid rgba(79, 129, 114, 0.42);
@@ -4946,6 +4959,25 @@ video {
   font-weight: 500;
   line-height: 1.45;
   text-align: left;
+}
+
+.portfolio-feature-tip svg {
+  flex: 0 0 auto;
+  width: 0.78rem;
+  height: 0.78rem;
+  stroke-width: 2;
+}
+
+.portfolio-feature-tip.type-project {
+  border-left-color: rgba(74, 127, 197, 0.42);
+  background: rgba(215, 239, 255, 0.58);
+  color: #6482aa;
+}
+
+.portfolio-feature-tip.type-system {
+  border-left-color: rgba(119, 104, 217, 0.42);
+  background: rgba(226, 233, 255, 0.58);
+  color: #746bb2;
 }
 
 .portfolio-tag-row {

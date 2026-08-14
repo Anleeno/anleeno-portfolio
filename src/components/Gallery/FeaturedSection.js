@@ -1,7 +1,14 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
+import { BsCpu, BsEye, BsStars } from "react-icons/bs";
 import { FiArrowUpRight, FiSmartphone } from "react-icons/fi";
 import huggingFaceLogo from "../../Assets/huggingface-logo.svg";
+
+const featureIconMap = {
+  "visual-perception": BsEye,
+  llm: BsCpu,
+  aigc: BsStars,
+};
 
 function isVideoWork(work) {
   return work.mediaType === "video" || /\.(mp4|webm|ogg)(?:\?.*)?$/i.test(work.image || "");
@@ -10,6 +17,7 @@ function isVideoWork(work) {
 function FeaturedCard({ work }) {
   const action = work.action || (work.link?.includes("github.com") ? "github" : "default");
   const type = work.type || "default";
+  const FeatureIcon = featureIconMap[work.iconType];
   const hasLink = Boolean(work.link && work.link !== "#");
   const ActionElement = hasLink ? "a" : "span";
   const playPreview = (event) => {
@@ -51,10 +59,17 @@ function FeaturedCard({ work }) {
         )}
       </div>
       <div className="portfolio-feature-body">
-        <span className={`portfolio-feature-badge type-${type}`}>{work.badge}</span>
+        <span className={`portfolio-feature-badge type-${type}`}>
+          {FeatureIcon && <FeatureIcon aria-hidden="true" />}
+          <span>{work.badge}</span>
+        </span>
         <h3>{work.title}</h3>
         <p>{work.description}</p>
-        {work.tip && <div className="portfolio-feature-tip">{work.tip}</div>}
+        {work.tip && (
+          <div className={`portfolio-feature-tip type-${type}`}>
+            <span>{work.tip}</span>
+          </div>
+        )}
         <ActionElement
           className={`portfolio-feature-action ${hasLink ? "" : "is-static"}`}
           {...(hasLink ? { href: work.link, target: "_blank", rel: "noreferrer" } : {})}

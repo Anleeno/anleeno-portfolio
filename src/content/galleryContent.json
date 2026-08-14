@@ -2,6 +2,7 @@
   "featuredWorks": [
     {
       "type": "app",
+      "iconType": "aigc",
       "badge": "XR",
       "title": "AI-Native Mixed-Reality Socializing",
       "description": "An AI-native mixed-reality social platform that blends spatial perception, generative interaction, and shared XR experiences. The project explores how intelligent agents can make remote socializing feel more embodied, expressive, and naturally connected.",
@@ -12,9 +13,11 @@
     },
     {
       "type": "project",
+      "iconType": "visual-perception",
       "badge": "Intelligent Transportation",
       "title": "ADAS for Micro-Mobility",
       "description": "A vision-based advanced driver-assistance system designed for e-bicycles and other micro-mobility vehicles. It combines real-time road perception, hazard awareness, and lightweight on-device inference to improve safety in complex urban traffic.",
+      "tip": "Part of my work at Hello Ltd.",
       "imageKey": "adas",
       "action": "github"
     },
@@ -23,6 +26,7 @@
       "badge": "Object Recommendation",
       "title": "DORIS: End-to-End Detection with Object Ranking for Retrieval Instance Selection",
       "description": "We propose a novel model for visual search and shopping scenarios, such as Taobao image search and Xiaohongshu camera search, that jointly performs object detection and ranking to identify and recommend the subjects most relevant to user intent.",
+      "tip": "Part of my work at Baidu Inc.",
       "imageKey": "doris",
       "action": "demo",
       "link": "https://huggingface.co/spaces/geminia/Doris"
