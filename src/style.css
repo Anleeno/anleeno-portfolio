@@ -3612,15 +3612,15 @@ video {
 .about-tarot-reading-signature {
   display: block;
   flex: 0 0 auto;
-  width: 2.15rem;
-  height: 2.15rem;
+  width: 2.65rem;
+  height: 2.65rem;
   object-fit: contain;
   object-position: center;
-  opacity: 0.82;
+  opacity: 0.96;
   filter:
     brightness(0) saturate(100%)
-    invert(52%) sepia(14%) saturate(1300%) hue-rotate(202deg)
-    brightness(86%) contrast(94%);
+    invert(43%) sepia(18%) saturate(1180%) hue-rotate(202deg)
+    brightness(82%) contrast(112%);
   transform: rotate(-5deg);
   transform-origin: center;
   user-select: none;
@@ -3992,8 +3992,8 @@ video {
   }
 
   .about-tarot-reading-signature {
-    width: 1.55rem;
-    height: 1.55rem;
+    width: 1.9rem;
+    height: 1.9rem;
   }
 
   .about-tarot-reading-text {
