@@ -3614,22 +3614,14 @@ video {
   flex: 0 0 auto;
   width: 2.15rem;
   height: 2.15rem;
-  background: color-mix(in srgb, var(--tarot-accent, #6c73bd) 64%, #5144c2);
-  -webkit-mask-image: var(--signature-image);
-  mask-image: var(--signature-image);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  opacity: 1;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.82;
   filter:
-    drop-shadow(0.55px 0 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4))
-    drop-shadow(-0.55px 0 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4))
-    drop-shadow(0 0.55px 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4))
-    drop-shadow(0 -0.55px 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4));
-  transform: rotate(-5deg) scale(1.06);
+    brightness(0) saturate(100%)
+    invert(52%) sepia(14%) saturate(1300%) hue-rotate(202deg)
+    brightness(86%) contrast(94%);
+  transform: rotate(-5deg);
   transform-origin: center;
   user-select: none;
   pointer-events: none;

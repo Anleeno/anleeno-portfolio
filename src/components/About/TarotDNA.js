@@ -480,11 +480,11 @@ function TarotDNA({ onCardChange }) {
                   {activeRecord.title}
                 </span>
                 {activeRecord.signature ? (
-                  <span
+                  <img
                     className="about-tarot-reading-signature"
-                    style={{ "--signature-image": `url(${activeRecord.signature})` }}
-                    role="img"
-                    aria-label="Anleeno signature"
+                    src={activeRecord.signature}
+                    alt="Taeyeon signature"
+                    draggable="false"
                   />
                 ) : null}
               </div>
