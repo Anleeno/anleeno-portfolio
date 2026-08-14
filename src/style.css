@@ -3602,6 +3602,39 @@ video {
   font-weight: 700;
 }
 
+.about-tarot-reading-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.62rem;
+  min-width: 0;
+}
+
+.about-tarot-reading-signature {
+  display: block;
+  flex: 0 0 auto;
+  width: 2.15rem;
+  height: 2.15rem;
+  background: color-mix(in srgb, var(--tarot-accent, #6c73bd) 64%, #5144c2);
+  -webkit-mask-image: var(--signature-image);
+  mask-image: var(--signature-image);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  opacity: 1;
+  filter:
+    drop-shadow(0.55px 0 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4))
+    drop-shadow(-0.55px 0 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4))
+    drop-shadow(0 0.55px 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4))
+    drop-shadow(0 -0.55px 0 color-mix(in srgb, var(--tarot-accent, #6c73bd) 55%, #493db4));
+  transform: rotate(-5deg) scale(1.06);
+  transform-origin: center;
+  user-select: none;
+  pointer-events: none;
+}
+
 .about-tarot-reading-timestamp {
   display: inline-flex;
   align-self: flex-end;
@@ -3960,6 +3993,15 @@ video {
     min-height: 21px;
     padding: 0.18rem 0.42rem;
     font-size: 0.54rem;
+  }
+
+  .about-tarot-reading-mark {
+    gap: 0.32rem;
+  }
+
+  .about-tarot-reading-signature {
+    width: 1.55rem;
+    height: 1.55rem;
   }
 
   .about-tarot-reading-text {

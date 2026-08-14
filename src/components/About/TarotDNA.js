@@ -19,6 +19,7 @@ import tarotStar from "../../Assets/Tarot/t3.png";
 import tarotStarGold from "../../Assets/Tarot/t3-gold.png";
 import tarotShell from "../../Assets/Tarot/t4.png";
 import tarotShellGold from "../../Assets/Tarot/t4-gold.png";
+import teayeonSignature from "../../Assets/Tarot/teayeon-signature.png";
 
 const bloomImageContext = require.context("../../Assets/Tarot/bloom", false, /\.(png|jpe?g|webp)$/i);
 const voyageImageContext = require.context("../../Assets/Tarot/voyage", false, /\.(png|jpe?g|webp)$/i);
@@ -70,6 +71,7 @@ const tarotGalleryRecords = {
   "the_tense": {
     timestamp: "2025.04.26",
     title: "The Tense in Macau",
+    signature: teayeonSignature,
     reading: "Some echoes linger in scent and sound before they settle into words: a gentle fragrance in the air, a shared chorus, and a sea of lights breathing together.",
     notes: [
       "Seventeen years of waiting unfolds through The Tense — turning love across past, present, and future into a collective atmosphere, brief, overwhelming, and impossible to reproduce in quite the same way."
@@ -472,10 +474,20 @@ function TarotDNA({ onCardChange }) {
               className="about-tarot-reading-copy"
               style={{ "--tarot-accent": activeCard.accent }}
             >
-              <span className="about-tarot-reading-type" style={{ "--tarot-accent": activeCard.accent }}>
-                {activeCard.icon}
-                {activeRecord.title}
-              </span>
+              <div className="about-tarot-reading-mark">
+                <span className="about-tarot-reading-type" style={{ "--tarot-accent": activeCard.accent }}>
+                  {activeCard.icon}
+                  {activeRecord.title}
+                </span>
+                {activeRecord.signature ? (
+                  <span
+                    className="about-tarot-reading-signature"
+                    style={{ "--signature-image": `url(${activeRecord.signature})` }}
+                    role="img"
+                    aria-label="Anleeno signature"
+                  />
+                ) : null}
+              </div>
               <p className="about-tarot-reading-text">{activeRecord.reading}</p>
               <div className="about-tarot-note-stack">
                 {activeRecord.notes.map((note) => (
