@@ -3616,7 +3616,7 @@ video {
   height: 2.65rem;
   object-fit: contain;
   object-position: center;
-  opacity: 0.96;
+  opacity: 1;
   filter:
     brightness(0) saturate(100%)
     invert(43%) sepia(18%) saturate(1180%) hue-rotate(202deg)
