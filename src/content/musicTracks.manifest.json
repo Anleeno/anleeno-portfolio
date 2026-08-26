@@ -152,30 +152,6 @@
     "audioFile": "15_RedVelvet-Psycho.mp3"
   },
   {
-    "id": 20,
-    "title": "Really",
-    "artist": "BLACKPINK",
-    "album": "Square Up",
-    "coverFile": "16_BLACKPINK-Really.jpg",
-    "audioFile": "16_BLACKPINK-Really.mp3"
-  },
-  {
-    "id": 21,
-    "title": "WHISTLE",
-    "artist": "BLACKPINK",
-    "album": "Square One",
-    "coverFile": "18_BLACKPINK-WHISTLE.jpg",
-    "audioFile": "18_BLACKPINK-WHISTLE.mp3"
-  },
-  {
-    "id": 22,
-    "title": "POP/STARS",
-    "artist": "K/DA",
-    "album": "POP/STARS",
-    "coverFile": "21_POP_STARS.jpg",
-    "audioFile": "21_POP_STARS.mp3"
-  },
-  {
     "id": 23,
     "title": "4 Walls",
     "artist": "f(x)",

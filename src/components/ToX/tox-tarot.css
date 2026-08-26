@@ -351,8 +351,19 @@ body:has(.tarot-world) .navbar .navbar-toggler span { background-color: #1f1f1f 
   .tarot-world-stage .about-tarot-back {
     left: .48rem;
     bottom: .48rem;
-    min-height: 1.65rem;
-    padding: .28rem .5rem;
+    gap: 3px;
+    min-height: 0;
+    height: 22px;
+    padding: 0 7px;
+    border-radius: 999px;
+    font-size: 8.5px;
+    line-height: 1;
+    box-shadow: 0 7px 14px rgba(38,50,71,.11);
+  }
+
+  .tarot-world-stage .about-tarot-back svg {
+    width: 9px;
+    height: 9px;
   }
 }
 
