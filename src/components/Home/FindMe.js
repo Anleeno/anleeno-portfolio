@@ -6,6 +6,7 @@ import {
   AiFillInstagram,
   AiFillLinkedin
 } from "react-icons/ai";
+import { FaFeatherAlt } from "react-icons/fa";
 
 function FindMe(){
   return (
@@ -14,6 +15,17 @@ function FindMe(){
         <Row>
           <Col md={12} className="home-about-social">
             <ul className="home-about-social-links">
+              <li className="social-icons">
+                <a
+                    href="https://www.anleeno.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Academic website"
+                    className="icon-colour  home-social-icons"
+                >
+                  <FaFeatherAlt />
+                </a>
+              </li>
               <li className="social-icons">
                 <a
                     href="https://github.com/anleeno"
