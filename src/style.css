@@ -2210,6 +2210,24 @@ video {
   padding-left: 15px;
 }
 
+@media (max-width: 767px) {
+  .home-about-social-links {
+    display: flex !important;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center !important;
+    gap: clamp(0.35rem, 2.5vw, 0.75rem);
+    width: max-content;
+    max-width: 100%;
+  }
+
+  .home-about-social-links .social-icons {
+    flex: 0 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 .icon-colour {
   color: #1f1f1f !important;
 }
